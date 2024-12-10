@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,10 +10,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        textColors: {
+          title: "#2A3D45",
+          primary: "#ffff",
+          secondarY: "#2A3D45",
+        },
+        bgColors: {
+          primary: "#2A3D45",
+        },
+        btnColors: {
+          primary: "#EE3537",
+          secondary: "#ffff",
+        },
       },
     },
+    container: {
+      center: true,
+    },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }: any) {
+      addComponents({
+        ".container": {
+          maxWidth: "1128px",
+        },
+      });
+    },
+    require("tailwindcss-animate"),
+  ],
 } satisfies Config;
