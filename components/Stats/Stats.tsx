@@ -49,10 +49,15 @@ const Stats = ({ className = "", locale }: StatsProps) => {
     <section className={`container  sm:px-10 lg:px-[8rem] ${className}`}>
       <div className="p-[20px] relative">
         {/** List */}
-        <main className="grid gap-10 sm:gap-1 grid-cols-3 bg-white p-10 px-2 sm:px-10 rounded-md drop-shadow-md">
+        <main className="grid gap-10 sm:gap-1 grid-cols-2 sm:grid-cols-3 bg-white p-10 px-2 sm:px-10 rounded-md drop-shadow-md">
           {statsItems?.map((item, idx) => (
-            <div key={idx} className="text-center">
-              <h2 className="text-btnColors-primary text-[23px] md:text-[45px] xl:text-[56px] font-semibold">
+            <div
+              key={idx}
+              className={`text-center ${
+                idx === statsItems.length - 1 && "col-span-2"
+              }`}
+            >
+              <h2 className="text-btnColors-primary text-[32px] md:text-[45px] xl:text-[56px] font-semibold">
                 {item.value}
               </h2>
               <Text size="lg">{item.description}</Text>
