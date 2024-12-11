@@ -14,13 +14,13 @@ const CustomBorder = ({
   const getPositionStyles = () => {
     switch (position) {
       case "top-left":
-        return "absolute top-0 left-0 w-[49px] h-[137px] border-t-[6px] border-l-[6px] md:border-t-[10px] md:border-l-[10px]";
+        return "absolute top-0 left-0 w-[49px] h-[137px] border-t-[7px] border-l-[7px] md:border-t-[10px] md:border-l-[10px]";
       case "top-right":
-        return "absolute top-0 right-0 w-[137px] h-[49px] border-t-[6px] border-r-[6px] md:border-t-[10px] md:border-r-[10px]";
+        return "absolute top-0 right-0 w-[137px] h-[49px] border-t-[7px] border-r-[7px] md:border-t-[10px] md:border-r-[10px]";
       case "bottom-left":
-        return "absolute bottom-0 left-0 w-[137px] h-[49px] border-b-[6px] border-l-[6px] md:border-b-[10px] md:border-l-[10px]";
+        return "absolute bottom-0 left-0 w-[137px] h-[49px] border-b-[7px] border-l-[7px] md:border-b-[10px] md:border-l-[10px]";
       case "bottom-right":
-        return "absolute bottom-0 right-0 w-[49px] h-[137px] border-b-[6px] border-r-[6px] md:border-b-[10px] md:border-r-[10px]";
+        return "absolute bottom-0 right-0 w-[49px] h-[137px] border-b-[7px] border-r-[7px] md:border-b-[10px] md:border-r-[10px]";
       default:
         return "";
     }
