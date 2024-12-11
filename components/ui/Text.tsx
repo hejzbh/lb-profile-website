@@ -13,7 +13,7 @@ const sizeClasses = {
   xs: "text-[10px] sm:text-[12px] md:text-[14px]",
   sm: "text-[13px] sm:text-[14px] md:text-[14px]",
   md: "text-[14px] sm:text-[15px] md:text-[15.5px]",
-  lg: "text-[14px] sm:text-[16px] md:text-[18px]",
+  lg: "text-[14.5px] sm:text-[16px] md:text-[18px]",
   xl: "text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px]",
   biggerSm: "text-[16px] sm:text-[14px] md:text-[15px]",
 };
