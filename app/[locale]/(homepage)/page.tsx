@@ -1,7 +1,8 @@
+import { LocaleType } from "@/i18n-config";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats/Stats";
 import OurProfiles from "@/components/Profiles";
-import { LocaleType } from "@/i18n-config";
+import Production from "@/components/Production";
 
 type HomeProps = {
   params: Promise<{
@@ -14,8 +15,9 @@ export default async function Home({ params }: HomeProps) {
   return (
     <>
       <Hero />
-      <Stats locale={locale} className="mt-[-105px] mb-24" />
-      <OurProfiles />
+      <Stats locale={locale} className="mt-[-105px] mb-28 lg:mb-36" />
+      <OurProfiles className="mb-28 lg:mb-36" />
+      <Production className="mb-28 lg:mb-36" />
     </>
   );
 }

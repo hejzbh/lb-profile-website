@@ -14,14 +14,14 @@ const sizeClasses = {
   sm: "text-[13px] sm:text-[14px] md:text-[14px]",
   md: "text-[14px] sm:text-[15px] md:text-[15.5px]",
   lg: "text-[14.5px] sm:text-[16px] md:text-[18px]",
-  xl: "text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px]",
+  xl: "text-[18px] sm:text-[20px] md:text-[28px] lg:text-[31px]",
   biggerSm: "text-[16px] sm:text-[14px] md:text-[15px]",
 };
 
 const Text = ({
   className = "",
   variant = "p",
-  size = "sm",
+  size = "md",
   children,
   withoutDefaultClass,
 }: TextProps) => {
