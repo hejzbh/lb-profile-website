@@ -9,15 +9,26 @@ const font = Roboto_Mono({
 type TitleProps = {
   className?: string;
   variant: "h1" | "h2" | "h3";
+  size?: "lg" | "xl";
   children: React.ReactNode;
 };
 
-const Title = ({ className = "", variant = "h2", children }: TitleProps) => {
+const fontSizesClasses = {
+  lg: "text-[30px] md:text-[39px] lg:text-[46px]",
+  xl: "text-[34px] md:text-[45px] lg:text-[56px]",
+};
+
+const Title = ({
+  className = "",
+  variant = "h2",
+  children,
+  size = "lg",
+}: TitleProps) => {
   const Element = variant;
 
   return (
     <Element
-      className={`text-textColors-title uppercase text-[35px] md:text-[45px] lg:text-[56px] font-semibold ${font.className} ${className}`}
+      className={`text-textColors-title uppercase  font-semibold ${fontSizesClasses[size]} ${font.className} ${className}`}
     >
       {children}
     </Element>

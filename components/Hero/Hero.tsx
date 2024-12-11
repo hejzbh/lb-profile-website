@@ -14,13 +14,12 @@ const Hero = ({ className = "" }: HeroProps) => {
       <Image
         src={bgImg}
         fill
-        className="z-[-1]"
+        className="z-[-1] object-cover"
         alt="Background"
         draggable={false}
-        objectFit="cover"
       />
       <div className="container flex flex-col justify-center items-start min-h-[80dvh]">
-        <Title className="max-w-[730px] mb-4" variant="h1">
+        <Title size="xl" className="max-w-[730px] mb-4" variant="h1">
           PVC-PROFILSYSTEME FUR FENSTER UND TUREN, EINZELHANDEL
         </Title>
         <Button variant="primary" className="font-semibold">
