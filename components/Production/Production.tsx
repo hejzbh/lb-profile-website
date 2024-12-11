@@ -22,7 +22,7 @@ const Production = ({ className = "" }: ProductionProps) => {
         height={960}
         alt="Production"
         loading="lazy"
-        className="flex-1 w-full max-w-[420px] lg:max-w-[520px] xl:max-w-[650px]"
+        className="flex-1 w-full max-w-[420px] lg:max-w-[520px] xl:max-w-[650px] mx-auto"
       />
 
       {/** Text */}
