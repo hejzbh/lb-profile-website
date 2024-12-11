@@ -36,6 +36,9 @@ const Dropdown = ({
   return (
     <div
       className={`relative ${className}`}
+      onClick={() => {
+        toggleDropdown(!isOpen);
+      }}
       onMouseEnter={() => toggleDropdown(true)}
       onMouseLeave={() => toggleDropdown(false)}
     >
