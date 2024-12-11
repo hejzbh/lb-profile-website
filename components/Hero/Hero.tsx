@@ -23,7 +23,9 @@ const Hero = ({ className = "" }: HeroProps) => {
         <Title className="max-w-[730px] mb-4" variant="h1">
           PVC-PROFILSYSTEME FUR FENSTER UND TUREN, EINZELHANDEL
         </Title>
-        <Button variant="primary">Click me</Button>
+        <Button variant="primary" className="font-semibold">
+          Mehr
+        </Button>
       </div>
     </section>
   );

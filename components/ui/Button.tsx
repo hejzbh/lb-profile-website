@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Text from "./Text";
 
 type ButtonProps = {
   className?: string;
@@ -26,7 +27,9 @@ const Button = ({
       title={dataTitle}
       className={`py-3 px-7 rounded-md transition-all duration-200 ease-in-out hover:md:opacity-90 relative overflow-hidden  min-w-40  shadow-2xl  before:absolute before:left-0 before:top-0 before:h-full before:w-0 before:duration-300 after:absolute after:right-0 after:top-0 after:h-full after:w-0 after:duration-300  hover:before:w-2/4  hover:after:w-2/4 after:z-[-1] before:z-[-1]  ${variantClasses[variant]} ${className}`}
     >
-      {children}
+      <Text withoutDefaultClass size="md">
+        {children}
+      </Text>
     </button>
   );
 };
