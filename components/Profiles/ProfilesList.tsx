@@ -26,7 +26,7 @@ const ProfilesList = ({ className = "" }: ProfilesListProps) => {
                 idx === 0
                   ? "mt-[-140px]"
                   : idx === profileItems.length - 1
-                  ? "md:mt-[-55px] lg:mt-[-140px]"
+                  ? "md:mt-[-55px]  md:col-span-2 lg:col-span-1 lg:mt-[-140px]"
                   : "md:mt-[-140px]"
               }`}
             >
