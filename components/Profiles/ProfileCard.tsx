@@ -26,7 +26,7 @@ const ProfileCard = ({ className = "", profile }: ProfileCardProps) => {
         <Title
           variant="h2"
           size="sm"
-          className="text-textColors-secondary group-hover:text-textColors-hover transition my-4"
+          className="!text-textColors-secondary group-hover:!text-textColors-hover transition my-4"
         >
           {profile.name}
         </Title>

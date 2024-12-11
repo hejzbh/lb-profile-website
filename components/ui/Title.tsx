@@ -29,7 +29,7 @@ const Title = ({
 
   return (
     <Element
-      className={`text-textColors-title   font-semibold ${fontSizesClasses[size]} ${font.className} ${className}`}
+      className={`text-textColors-title  font-semibold ${fontSizesClasses[size]} ${font.className} ${className}`}
     >
       {children}
     </Element>
