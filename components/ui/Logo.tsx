@@ -15,7 +15,7 @@ const Logo = ({ className = "", variant = "light" }: LogoProps) => {
       {" "}
       <Image
         src={variant === "light" ? lightLogo : darkLogo}
-        className={`w-full max-w-[160px]`}
+        className={`w-full max-w-[160px] md:min-w-[160px]`}
         alt="Logo"
         width={150}
         height={150}
