@@ -74,7 +74,12 @@ const Dropdown = ({
             ) : (
               <div
                 className={`px-2 py-3 md:py-2 ${item.children && "pl-0"}`}
-                onClick={item.onClick}
+                onClick={() => {
+                  if (item.onClick) {
+                    item.onClick();
+                    setIsOpen(false);
+                  }
+                }}
               >
                 <Text withoutDefaultClass size="sm">
                   {item.name}
