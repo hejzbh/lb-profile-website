@@ -5,6 +5,14 @@ const nextConfig: NextConfig = {
   experimental: {
     after: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/bs/kontakt",
+        destination: "/bs/contact-us",
+      },
+    ];
+  },
 };
 
 export default nextConfig;

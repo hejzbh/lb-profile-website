@@ -11,4 +11,4 @@ export const i18n = {
   locales: locales.map((l) => l.locale),
 } as const;
 
-export type Locale = (typeof i18n)["locales"][number];
+export type LocaleType = (typeof i18n)["locales"][number];

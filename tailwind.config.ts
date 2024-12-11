@@ -12,11 +12,14 @@ export default {
       colors: {
         textColors: {
           title: "#2A3D45",
-          primary: "#ffff",
-          secondarY: "#2A3D45",
+          primary: "#2A3D45",
+          secondary: "#ffff",
+          active: "#EE3537",
+          hover: "#EE3537",
         },
         bgColors: {
           primary: "#2A3D45",
+          hover: "#EE3537",
         },
         btnColors: {
           primary: "#EE3537",
@@ -32,7 +35,10 @@ export default {
     function ({ addComponents }: any) {
       addComponents({
         ".container": {
-          maxWidth: "1128px",
+          maxWidth: "93%",
+          "@screen sm": {
+            maxWidth: "1328px",
+          },
         },
       });
     },

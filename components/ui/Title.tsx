@@ -17,7 +17,7 @@ const Title = ({ className = "", variant = "h2", children }: TitleProps) => {
 
   return (
     <Element
-      className={`text-textColors-title uppercase text-[56px] font-semibold ${font.className} ${className}`}
+      className={`text-textColors-title uppercase text-[38px] md:text-[45px] lg:text-[56px] font-semibold ${font.className} ${className}`}
     >
       {children}
     </Element>
