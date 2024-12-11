@@ -61,13 +61,15 @@ const Dropdown = ({
         {items.map((item, index) => (
           <li
             key={index}
-            className={`flex space-x-2 px-4 py-2 cursor-pointer rounded-md text-left hover:bg-bgColors-hover/10 hover:text-textColors-hover text-textColors-primary ${item.className}`}
+            className={`flex space-x-2cursor-pointer rounded-md text-left hover:bg-bgColors-hover/10 hover:text-textColors-hover text-textColors-primary ${item.className}`}
           >
             {item.children}
             {item?.href ? (
-              <Link href={item.href}>{item.name}</Link>
+              <Link className="px-4 py-2" href={item.href}>
+                {item.name}
+              </Link>
             ) : (
-              <div onClick={item.onClick}>
+              <div className="px-4 py-2" onClick={item.onClick}>
                 <Text withoutDefaultClass size="sm">
                   {item.name}
                 </Text>
