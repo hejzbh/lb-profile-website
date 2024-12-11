@@ -11,7 +11,7 @@ type LogoProps = {
 
 const Logo = ({ className = "", variant = "light" }: LogoProps) => {
   return (
-    <Link className={`${className}`} href={"/"} title="/">
+    <Link className={`${className} focus:opacity-50`} href={"/"} title="/">
       {" "}
       <Image
         src={variant === "light" ? lightLogo : darkLogo}
