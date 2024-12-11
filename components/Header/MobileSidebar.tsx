@@ -21,7 +21,7 @@ const MobileSidebar = ({ className = "" }: MobileSidebarProps) => {
         <SheetTrigger asChild className="p-1 pr-0">
           <button
             title="Otvori/Open"
-            className="text-textColors-active active:text-textColors-secondary active:opacity-80"
+            className="text-btnColors-primary active:text-textColors-secondary active:opacity-80"
           >
             <AlignJustifyIcon />
           </button>
