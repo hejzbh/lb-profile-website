@@ -40,7 +40,7 @@ const LocaleSwitcher = ({ className = "" }: LocaleSwitcherProps) => {
               <Image
                 src={deImg}
                 width={25}
-                className="rounded-sm w-[28px] h-[19px]"
+                className="rounded-sm w-[28px] h-[19px] object-contain"
                 height={11}
                 alt="Bosnian"
                 loading="lazy"
@@ -56,14 +56,14 @@ const LocaleSwitcher = ({ className = "" }: LocaleSwitcherProps) => {
               <Image
                 src={enImg}
                 width={28}
-                className="rounded-sm w-[28px] h-[19px]"
+                className="rounded-sm w-[28px] h-[19px] object-contain"
                 height={11}
                 alt="Bosnian"
                 loading="lazy"
               />
             ),
             className:
-              locale === "en" ? "!text-textColors-active  font-[500]" : "",
+              locale === "en" ? "!text-textColors-active  font-[500] " : "",
           },
           {
             name: "Bosanski",
@@ -72,7 +72,7 @@ const LocaleSwitcher = ({ className = "" }: LocaleSwitcherProps) => {
               <Image
                 src={bsImg}
                 width={28}
-                className="rounded-sm w-[28px] h-[19px]"
+                className="rounded-sm w-[28px] h-[19px] object-contain"
                 height={11}
                 alt="Bosnian"
                 loading="lazy"
