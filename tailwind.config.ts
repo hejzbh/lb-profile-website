@@ -37,6 +37,9 @@ export default {
         ".container": {
           maxWidth: "93%",
           "@screen lg": {
+            maxWidth: "95%",
+          },
+          "@screen xl": {
             maxWidth: "1328px",
           },
         },

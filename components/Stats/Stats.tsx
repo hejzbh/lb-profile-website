@@ -1,6 +1,7 @@
 import { LocaleType } from "@/i18n-config";
 import React from "react";
 import Text from "@/components/ui/Text";
+import CustomBorder from "@/components/ui/CustomBorder";
 
 type StatsProps = {
   className?: string;
@@ -60,8 +61,8 @@ const Stats = ({ className = "", locale }: StatsProps) => {
         </main>
 
         {/** Custom borders */}
-        <div className="absolute top-0 right-0 w-[137px] h-[49px] border-t-[10px] border-bgColors-hover border-r-[10px]"></div>
-        <div className="absolute bottom-0 left-0 w-[137px] h-[49px] border-b-[10px] border-bgColors-hover border-l-[10px]"></div>
+        <CustomBorder position="top-right" />
+        <CustomBorder position="bottom-left" />
       </div>
     </section>
   );
