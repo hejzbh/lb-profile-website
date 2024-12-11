@@ -22,7 +22,7 @@ const ProfilesList = ({ className = "" }: ProfilesListProps) => {
           {profileItems?.map((profile, idx) => (
             <li
               key={idx}
-              className={`hover:translate-y-[-3%] ${
+              className={`hover:md:translate-y-[-3%] transition ${
                 idx === 0
                   ? "mt-[-140px]"
                   : idx === profileItems.length - 1
