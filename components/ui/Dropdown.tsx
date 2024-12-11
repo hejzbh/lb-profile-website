@@ -56,20 +56,26 @@ const Dropdown = ({
         className={`absolute left-[-15%]  z-[10] min-w-[150px] mt-2 bg-white rounded-md shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
         } ${dropdownClassName}`}
-        style={{ maxHeight: isOpen ? "200px" : "0px" }}
+        style={{ maxHeight: isOpen ? "400px" : "0px" }}
       >
         {items.map((item, index) => (
           <li
             key={index}
-            className={`flex space-x-2cursor-pointer rounded-md text-left hover:bg-bgColors-hover/10 hover:text-textColors-hover text-textColors-primary ${item.className}`}
+            className={`flex px-2 space-x-2 cursor-pointer items-center rounded-md text-left hover:bg-bgColors-hover/10 hover:text-textColors-hover text-textColors-primary ${item.className}`}
           >
             {item.children}
             {item?.href ? (
-              <Link className="px-4 py-2" href={item.href}>
+              <Link
+                className={`px-2 py-3 md:py-2 ${item.children && "pl-0"}`}
+                href={item.href}
+              >
                 {item.name}
               </Link>
             ) : (
-              <div className="px-4 py-2" onClick={item.onClick}>
+              <div
+                className={`px-2 py-3 md:py-2 ${item.children && "pl-0"}`}
+                onClick={item.onClick}
+              >
                 <Text withoutDefaultClass size="sm">
                   {item.name}
                 </Text>

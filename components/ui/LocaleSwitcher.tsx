@@ -39,8 +39,8 @@ const LocaleSwitcher = ({ className = "" }: LocaleSwitcherProps) => {
             children: (
               <Image
                 src={deImg}
-                width={28}
-                className="rounded-sm"
+                width={25}
+                className="rounded-sm w-[28px] h-[19px]"
                 height={11}
                 alt="Bosnian"
                 loading="lazy"
@@ -56,7 +56,7 @@ const LocaleSwitcher = ({ className = "" }: LocaleSwitcherProps) => {
               <Image
                 src={enImg}
                 width={28}
-                className="rounded-sm"
+                className="rounded-sm w-[28px] h-[19px]"
                 height={11}
                 alt="Bosnian"
                 loading="lazy"
@@ -72,7 +72,7 @@ const LocaleSwitcher = ({ className = "" }: LocaleSwitcherProps) => {
               <Image
                 src={bsImg}
                 width={28}
-                className="rounded-sm"
+                className="rounded-sm w-[28px] h-[19px]"
                 height={11}
                 alt="Bosnian"
                 loading="lazy"
