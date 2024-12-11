@@ -36,7 +36,7 @@ export default {
       addComponents({
         ".container": {
           maxWidth: "93%",
-          "@screen sm": {
+          "@screen lg": {
             maxWidth: "1328px",
           },
         },
