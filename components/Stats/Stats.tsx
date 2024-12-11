@@ -54,7 +54,7 @@ const Stats = ({ className = "", locale }: StatsProps) => {
             <div
               key={idx}
               className={`text-center ${
-                idx === statsItems.length - 1 && "col-span-2"
+                idx === statsItems.length - 1 && "col-span-2 sm:col-span-1"
               }`}
             >
               <h2 className="text-btnColors-primary text-[32px] md:text-[45px] xl:text-[56px] font-semibold">
