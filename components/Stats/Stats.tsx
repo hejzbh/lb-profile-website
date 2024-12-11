@@ -46,13 +46,13 @@ const Stats = ({ className = "", locale }: StatsProps) => {
   const statsItems = getStatsItems(locale);
 
   return (
-    <section className={`container px-5 sm:px-10 lg:px-[8rem] ${className}`}>
+    <section className={`container  sm:px-10 lg:px-[8rem] ${className}`}>
       <div className="p-[20px] relative">
         {/** List */}
-        <main className="grid gap-10 sm:gap-1 sm:grid-cols-3 bg-white p-10 px-0 sm:px-10 rounded-md drop-shadow-md">
+        <main className="grid gap-10 sm:gap-1 grid-cols-3 bg-white p-10 px-2 sm:px-10 rounded-md drop-shadow-md">
           {statsItems?.map((item, idx) => (
             <div key={idx} className="text-center">
-              <h2 className="text-btnColors-primary text-[32px] md:text-[45px] xl:text-[56px] font-semibold">
+              <h2 className="text-btnColors-primary text-[23px] md:text-[45px] xl:text-[56px] font-semibold">
                 {item.value}
               </h2>
               <Text size="lg">{item.description}</Text>
