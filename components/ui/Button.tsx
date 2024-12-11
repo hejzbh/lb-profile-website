@@ -10,7 +10,7 @@ type ButtonProps = {
 
 const variantClasses = {
   primary:
-    "bg-btnColors-primary text-white hover:text-btnColors-primary hover:shadow-white hover:before:bg-white hover:after:bg-white",
+    "bg-btnColors-primary text-white border-[1px] border-btnColors-primary hover:text-btnColors-primary hover:shadow-white hover:before:bg-white hover:after:bg-white",
   secondary:
     "bg-btnColors-secondary text-textColors-primary hover:text-white hover:shadow-white hover:before:bg-btnColors-primary hover:after:bg-btnColors-primary",
 };
