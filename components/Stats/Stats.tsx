@@ -47,7 +47,7 @@ const Stats = ({ className = "", locale }: StatsProps) => {
 
   return (
     <section className={`container  sm:px-10 lg:px-[8rem] ${className}`}>
-      <div className="p-[20px] relative">
+      <div className="p-[20px] md:p-[25px] relative">
         {/** List */}
         <main className="grid gap-10 sm:gap-1 grid-cols-2 sm:grid-cols-3 bg-white p-10 px-2 sm:px-10 rounded-md drop-shadow-md">
           {statsItems?.map((item, idx) => (
