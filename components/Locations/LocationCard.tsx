@@ -71,7 +71,7 @@ const LocationCard = ({ className = "", location }: LocationCardProps) => {
               size="lg"
               className="transition group-hover:text-textColors-hover"
             >
-              E-Mail {location.email}
+              E-Mail: {location.email}
             </Text>
           </Link>
         </div>
