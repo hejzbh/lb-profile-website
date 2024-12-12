@@ -199,14 +199,14 @@ const CarouselPrevious = React.forwardRef<
   return (
     <button
       {...props}
-      className="disabled:opacity-60"
+      className="active:opacity-80 active:text-textColors-active hover:md:opacity-80 text-white hover:md:text-textColors-hover disabled:opacity-60"
       title="Nazad/Prev"
       onClick={scrollPrev}
       ref={ref}
       disabled={!canScrollPrev}
     >
       {" "}
-      <ArrowLeft className="h-[35px] w-[40px] text-white" />
+      <ArrowLeft className="h-[35px] w-[40px] transition" />
     </button>
   );
 });
@@ -225,9 +225,9 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       ref={ref}
       disabled={!canScrollNext}
-      className="disabled:opacity-60"
+      className="active:opacity-80 active:text-textColors-active hover:md:opacity-80 text-white hover:md:text-textColors-hover disabled:opacity-60"
     >
-      <ArrowRight className="h-[35px] w-[40px] text-white" />
+      <ArrowRight className="h-[35px] w-[40px] transition" />
     </button>
   );
 });

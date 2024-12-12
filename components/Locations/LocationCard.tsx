@@ -24,7 +24,7 @@ const LocationCard = ({ className = "", location }: LocationCardProps) => {
           <Link title="Google Maps" className="group" href={location.mapHref}>
             <Text
               size="lg"
-              className="transition group-hover:text-textColors-hover"
+              className="transition active:text-textColors-active group-hover:md:text-textColors-hover"
             >
               {location.address}
             </Text>
@@ -39,7 +39,7 @@ const LocationCard = ({ className = "", location }: LocationCardProps) => {
           >
             <Text
               size="lg"
-              className="transition group-hover:text-textColors-hover"
+              className="transition active:text-textColors-active group-hover:md:text-textColors-hover"
             >
               Tel: {location.tel}
             </Text>
@@ -54,7 +54,7 @@ const LocationCard = ({ className = "", location }: LocationCardProps) => {
           >
             <Text
               size="lg"
-              className="transition group-hover:text-textColors-hover"
+              className="transition active:text-textColors-active group-hover:md:text-textColors-hover"
             >
               Fax: {location.fax}
             </Text>
@@ -69,7 +69,7 @@ const LocationCard = ({ className = "", location }: LocationCardProps) => {
           >
             <Text
               size="lg"
-              className="transition group-hover:text-textColors-hover"
+              className="transition active:text-textColors-active group-hover:md:text-textColors-hover"
             >
               E-Mail: {location.email}
             </Text>
