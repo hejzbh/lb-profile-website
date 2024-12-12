@@ -31,7 +31,7 @@ const LocationCard = ({ className = "", location }: LocationCardProps) => {
           </Link>
         </div>
         <div className="flex items-center">
-          <Phone className="w-7 h-7 mr-3 text-gray-600" />
+          <Phone className="w-6 h-6 md:w-7 md:h-7 mr-3 text-gray-600" />
           <Link
             title={location.tel}
             className="group"
@@ -46,7 +46,7 @@ const LocationCard = ({ className = "", location }: LocationCardProps) => {
           </Link>
         </div>
         <div className="flex items-center">
-          <PhoneCall className="w-7 h-7 mr-3 text-gray-600" />
+          <PhoneCall className="w-6 h-6 md:w-7 md:h-7 mr-3 text-gray-600" />
           <Link
             title={location.fax}
             className="group"
@@ -61,7 +61,7 @@ const LocationCard = ({ className = "", location }: LocationCardProps) => {
           </Link>
         </div>
         <div className="flex items-center">
-          <Mail className="w-7 h-7 mr-3 text-gray-600" />
+          <Mail className="w-6 h-6 md:w-7 md:h-7 mr-3 text-gray-600" />
           <Link
             title={location.email}
             className="group"
