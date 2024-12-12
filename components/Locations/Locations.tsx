@@ -36,7 +36,10 @@ const Locations = ({ className = "" }: LocationsProps) => {
       <Carousel className={`${className}`}>
         <CarouselContent className="space-x-0">
           {locations?.map((location) => (
-            <CarouselItem key={location.mapHref} className="w-[85%] md:w-1/2">
+            <CarouselItem
+              key={location.mapHref}
+              className="!basis-[85%] md:!basis-1/2"
+            >
               <LocationCard location={location} />
             </CarouselItem>
           ))}
