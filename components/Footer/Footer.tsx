@@ -88,7 +88,7 @@ const Footer = ({ className = "" }: FooterProps) => {
         {/** BOTTOM */}
         <div className="flex items-center justify-between">
           <Text className="text-white max-w-[700px]">
-            All rights reserved {new Date().getFullYear()} LB. Profile
+            All rights reserved &copy;{new Date().getFullYear()} LB. Profile
           </Text>
           <Button variant="primary">Zustimmen</Button>
         </div>
