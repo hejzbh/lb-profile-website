@@ -10,12 +10,12 @@ type TextProps = {
 };
 
 const sizeClasses = {
-  xs: "text-[10px] sm:text-[12px] md:text-[14px]",
-  sm: "text-[13px] sm:text-[14px] md:text-[14px]",
-  md: "text-[14px] sm:text-[15px] md:text-[15.5px]",
-  lg: "text-[14.5px] sm:text-[16px] md:text-[18px]",
-  xl: "text-[18px] sm:text-[20px] md:text-[28px] lg:text-[31px]",
-  biggerSm: "text-[16px] sm:text-[14px] md:text-[15px]",
+  xs: "text-[0.625rem] sm:text-[0.75rem] md:text-[0.875rem]",
+  sm: "text-[0.8125rem] sm:text-[0.875rem] md:text-[0.9rem]",
+  md: "text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem]",
+  lg: "text-[0.90625rem] sm:text-[1rem] md:text-[1.125rem]",
+  xl: "text-[1.125rem] sm:text-[1.25rem] md:text-[1.75rem] lg:text-[1.9375rem]",
+  biggerSm: "text-[1rem] sm:text-[0.875rem] md:text-[0.9375rem]",
 };
 
 const Text = ({

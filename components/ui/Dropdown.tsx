@@ -72,7 +72,9 @@ const Dropdown = ({
                 className={`px-2 py-3 md:py-2 ${item.children && "pl-0"}`}
                 href={item.href}
               >
-                {item.name}
+                <Text withoutDefaultClass size="sm">
+                  {item.name}
+                </Text>
               </Link>
             ) : (
               <div

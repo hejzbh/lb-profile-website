@@ -5,6 +5,7 @@ import OurProfiles from "@/components/Profiles";
 import Production from "@/components/Production";
 import Video from "@/components/Video/Video";
 import Blog from "@/components/Blog";
+import AboutUs from "@/components/AboutUs";
 
 type HomeProps = {
   params: Promise<{
@@ -22,6 +23,7 @@ export default async function Home({ params }: HomeProps) {
       <Production className="mb-28 lg:mb-36" />
       <Blog className="mb-28 lg:mb-36" />
       <Video className="mb-28 lg:mb-36" />
+      <AboutUs className="mb-28 lg:mb-36" />
     </>
   );
 }
