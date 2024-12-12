@@ -13,7 +13,7 @@ type FooterProps = {
 const Footer = ({ className = "" }: FooterProps) => {
   return (
     <footer
-      className={`bg-bgColors-primary pb-10 pt-[15rem] relative z-[1] ${className}`}
+      className={`bg-bgColors-primary pb-10 pt-[16rem] relative z-[1] ${className}`}
     >
       <main className="container">
         {/** TOP */}
