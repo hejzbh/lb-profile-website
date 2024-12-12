@@ -19,6 +19,7 @@ export default {
         },
         bgColors: {
           primary: "#2A3D45",
+          secondary: "#7E8D85",
           hover: "#EE3537",
         },
         btnColors: {

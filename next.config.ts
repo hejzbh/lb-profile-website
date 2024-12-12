@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   experimental: {
     after: true,
   },
+  images: {
+    domains: ["lbprofile.de"],
+  },
   async rewrites() {
     return [
       {
