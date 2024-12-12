@@ -38,7 +38,7 @@ const Locations = ({ className = "" }: LocationsProps) => {
           {locations?.map((location) => (
             <CarouselItem
               key={location.mapHref}
-              className="basis-[85%] md:basis-1/2 "
+              className="basis-[85%] md:basis-1/2"
             >
               <LocationCard location={location} />
             </CarouselItem>

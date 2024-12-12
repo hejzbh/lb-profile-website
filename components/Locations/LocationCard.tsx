@@ -14,7 +14,7 @@ const LocationCard = ({ className = "", location }: LocationCardProps) => {
     <article
       className={`bg-white shadow-2xl rounded-xl min-h-[285px] py-7 px-10 sm:px-12 ${className}`}
     >
-      <Text size="xl" className="text-textColors-active font-[500]">
+      <Text size="xl" className="!text-textColors-active font-[500]">
         {location.name}
       </Text>
 
