@@ -52,7 +52,7 @@ const Blog = async ({ className = "" }: BlogProps) => {
 
   return (
     <section
-      className={`py-[70px] relative bg-bgColors-secondary ${className}`}
+      className={`py-[70px] relative z-[1] bg-bgColors-secondary ${className}`}
     >
       <Image
         src={webImg}
