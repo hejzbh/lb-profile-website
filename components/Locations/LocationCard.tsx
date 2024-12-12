@@ -18,7 +18,7 @@ const LocationCard = ({ className = "", location }: LocationCardProps) => {
         {location.name}
       </Text>
 
-      <div className="text-gray-800 font-semibold font-sans space-y-4 mt-6">
+      <div className="text-gray-800 font-[500] md:font-semibold font-sans space-y-4 mt-6">
         <div className="flex items-center">
           <MapPin className="w-7 h-7 mr-3 text-gray-600" />
           <Link title="Google Maps" className="group" href={location.mapHref}>
