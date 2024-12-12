@@ -60,7 +60,7 @@ const Stats = ({ className = "", locale }: StatsProps) => {
               <h2 className="text-btnColors-primary text-[32px] md:text-[45px] xl:text-[56px] font-semibold">
                 {item.value}
               </h2>
-              <Text size="lg">{item.description}</Text>
+              <Text size="md">{item.description}</Text>
             </div>
           ))}
         </main>
