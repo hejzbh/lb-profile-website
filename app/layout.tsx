@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const font = Inter({
   weight: ["400", "600", "800", "900"],
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={`${font.className}`}>
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

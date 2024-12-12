@@ -10,3 +10,9 @@ export type BlogItemType = {
   thumbnail: any;
   createdAt: string;
 };
+
+export type SocialLinkType = {
+  Icon: any;
+  href: string;
+  name: string;
+};
