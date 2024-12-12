@@ -88,9 +88,7 @@ const Footer = ({ className = "" }: FooterProps) => {
         {/** BOTTOM */}
         <div className="flex items-center justify-between">
           <Text className="text-white max-w-[700px]">
-            Wir verwenden Cookies, um dir die bestmögliche Erfahrung auf unserer
-            Website zu bieten. In den Einstellungen kannst du erfahren, welche
-            Cookies wir verwenden oder sie ausschalten.
+            All rights reserved {new Date().getFullYear()} LB. Profile
           </Text>
           <Button variant="primary">Zustimmen</Button>
         </div>
