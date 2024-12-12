@@ -16,3 +16,12 @@ export type SocialLinkType = {
   href: string;
   name: string;
 };
+
+export type LocationType = {
+  name: string;
+  address: string;
+  mapHref: string;
+  tel: string;
+  fax: string;
+  email: string;
+};
