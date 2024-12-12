@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${font.className}`}>
         <Header />
         <main>{children}</main>
-        <Locations className="mb-[-90px] z-[7] relative" />
+        <Locations className="mb-[-75px] sm:mb-[-90px] z-[7] relative" />
         <Footer />
       </body>
     </html>
