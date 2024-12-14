@@ -26,7 +26,7 @@ const locations: LocationType[] = [
     tel: "+387 53 991 330",
     fax: "+387 53 991 330",
     email: "info@lbprofilebh.ba",
-    mapHref: "https://maps.app.goo.gl/LK7d6n5vRTBSDav48",
+    mapHref: "https://maps.app.goo.gl/B4GYxbe51RDZQgVJ9",
   },
 ];
 
