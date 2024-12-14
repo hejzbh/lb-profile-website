@@ -14,9 +14,9 @@ type ButtonProps = {
 
 const variantClasses = {
   primary:
-    "bg-btnColors-primary text-white border-[1px] border-btnColors-primary hover:text-btnColors-primary hover:shadow-white hover:before:bg-white hover:after:bg-white",
+    "bg-btnColors-primary text-white border-[1px] border-btnColors-primary hover:md:text-btnColors-primary hover:md:shadow-white hover:before:md:bg-white hover:md:after:bg-white",
   secondary:
-    "bg-btnColors-secondary text-textColors-primary hover:text-white hover:shadow-white hover:before:bg-btnColors-primary hover:after:bg-btnColors-primary",
+    "bg-btnColors-secondary text-textColors-primary hover:md:text-white hover:md:shadow-white hover:md:before:bg-btnColors-primary hover:md:after:bg-btnColors-primary",
 };
 
 const Button = ({
@@ -34,7 +34,7 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       title={dataTitle}
-      className={`py-3 px-7 disabled:opacity-70 rounded-md transition-all duration-200 ease-in-out hover:md:opacity-90 relative overflow-hidden  min-w-40  shadow-2xl  before:absolute before:left-0 before:top-0 before:h-full before:w-0 before:duration-300 after:absolute after:right-0 after:top-0 after:h-full after:w-0 after:duration-300  hover:before:w-2/4  hover:after:w-2/4 after:z-[-1] before:z-[-1]  ${variantClasses[variant]} ${className}`}
+      className={`py-3 px-7 disabled:opacity-70 rounded-md transition-all active:opacity-60 duration-200 ease-in-out hover:md:opacity-90 relative overflow-hidden  min-w-40  shadow-2xl  md:before:absolute md:before:left-0 md:before:top-0 md:before:h-full md:before:w-0 md:before:duration-300 md:after:absolute md:after:right-0 md:after:top-0 md:after:h-full md:after:w-0 md:after:duration-300  hover:md:before:w-2/4  hover:md:after:w-2/4 md:after:z-[-1] md:before:z-[-1]  ${variantClasses[variant]} ${className}`}
     >
       <Text withoutDefaultClass size="md">
         {children}
