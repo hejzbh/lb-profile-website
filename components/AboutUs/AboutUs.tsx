@@ -2,7 +2,7 @@ import React from "react";
 import Title from "@/components/ui/Title";
 import Text from "@/components/ui/Text";
 import Image from "next/image";
-import lbImg from "@/public/images/lb.webp";
+import lbImg from "@/public/images/statistics.webp";
 
 type AboutUsProps = {
   className?: string;
@@ -48,7 +48,7 @@ const AboutUs = ({ className = "" }: AboutUsProps) => {
         width={880}
         height={750}
         alt="LB Profile"
-        className="w-full max-w-[240px] md:max-w-[468px] mx-auto"
+        className="w-full max-w-[340px] md:max-w-[668px] mx-auto"
       />
     </section>
   );
