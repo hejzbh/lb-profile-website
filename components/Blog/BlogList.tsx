@@ -19,7 +19,10 @@ const BlogList = ({ className = "", items }: BlogListProps) => {
     <Carousel className={`${className}`}>
       <CarouselContent className="mt-20 mb-10 space-x-10">
         {items?.map((item) => (
-          <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem
+            key={item.id}
+            className="basis-[85%] md:basis-1/2 lg:basis-1/3"
+          >
             <BlogCard item={item} />
           </CarouselItem>
         ))}
