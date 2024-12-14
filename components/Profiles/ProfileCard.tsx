@@ -10,7 +10,9 @@ type ProfileCardProps = {
 
 const ProfileCard = ({ className = "", profile }: ProfileCardProps) => {
   return (
-    <div className={`${className} text-center cursor-pointer group`}>
+    <div
+      className={`${className} text-center cursor-pointer group active:opacity-60 transition`}
+    >
       <div className="bg-white  rounded-md">
         <Image
           src={profile.image}
@@ -26,7 +28,7 @@ const ProfileCard = ({ className = "", profile }: ProfileCardProps) => {
         <Title
           variant="h2"
           size="sm"
-          className="!text-textColors-secondary group-hover:!text-textColors-hover transition my-4"
+          className="!text-textColors-secondary  group-hover:md:!text-textColors-hover transition my-4"
         >
           {profile.name}
         </Title>
