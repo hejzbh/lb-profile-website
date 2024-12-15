@@ -1,9 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Title from "@/components/ui/Title";
 import bgImg from "@/public/images/video-bg.webp";
-let timeout: any; // eslint-disable-line
+import Button from "@/components/ui/Button";
 
 type VideoProps = {
   className?: string;
@@ -11,14 +11,20 @@ type VideoProps = {
 
 const Video = ({ className = "" }: VideoProps) => {
   const [isClicked, setIsClicked] = useState(false);
+  const iframeRef: any = useRef(null);
 
-  useEffect(() => {
-    timeout = setTimeout(() => {
-      setIsClicked(true);
-    }, 2000);
+  // Handle mouseover to preconnect to third-party resources (YouTube)
+  const handleMouseOver = () => {
+    const link = document.createElement("link");
+    link.rel = "preconnect";
+    link.href = "https://www.youtube.com";
+    document.head.appendChild(link);
+  };
 
-    return () => clearTimeout(timeout);
-  }, []); // eslint-disable-line
+  // Handle click to replace facade with iframe
+  const handleClick = () => {
+    setIsClicked(true);
+  };
 
   return (
     <section className={`relative container py-20 ${className}`}>
@@ -32,7 +38,11 @@ const Video = ({ className = "" }: VideoProps) => {
       <Title variant="h2" className="text-center mb-5">
         Video
       </Title>
-      <div className="relative cursor-pointer w-full">
+      <div
+        onMouseOver={handleMouseOver}
+        onClick={handleClick}
+        className="relative cursor-pointer w-full"
+      >
         {!isClicked ? (
           <div
             className="w-full h-[360px] md:h-[500px] lg:h-[630px] bg-gray-200 rounded-2xl flex items-center justify-center"
@@ -43,10 +53,11 @@ const Video = ({ className = "" }: VideoProps) => {
               backgroundPosition: "center",
             }}
           >
-            <span className="text-white text-xl">Loading...</span>
+            <Button variant="secondary">Load Video</Button>
           </div>
         ) : (
           <iframe
+            ref={iframeRef}
             src="https://www.youtube.com/embed/SozfKGqfsUE?start=99"
             title="LB Profile Video"
             loading="lazy"
