@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Title from "@/components/ui/Title";
 import bgImg from "@/public/images/video-bg.webp";
+let timeout: any;
 
 type VideoProps = {
   className?: string;
@@ -10,13 +11,14 @@ type VideoProps = {
 
 const Video = ({ className = "" }: VideoProps) => {
   const [isClicked, setIsClicked] = useState(false);
-  const iframeRef: any = useRef(null);
 
   useEffect(() => {
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       setIsClicked(true);
     }, 1000);
-  }, []);
+
+    return () => clearTimeout(timeout);
+  }, []); // eslint-disable-line
 
   return (
     <section className={`relative container py-20 ${className}`}>
@@ -45,7 +47,6 @@ const Video = ({ className = "" }: VideoProps) => {
           </div>
         ) : (
           <iframe
-            ref={iframeRef}
             src="https://www.youtube.com/embed/SozfKGqfsUE?start=99"
             title="LB Profile Video"
             loading="lazy"
