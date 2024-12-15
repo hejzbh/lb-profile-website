@@ -11,7 +11,6 @@ type VideoProps = {
 
 const Video = ({ className = "" }: VideoProps) => {
   const [isClicked, setIsClicked] = useState(false);
-  const iframeRef: any = useRef(null);
 
   // Handle mouseover to preconnect to third-party resources (YouTube)
   const handleMouseOver = () => {
@@ -57,7 +56,6 @@ const Video = ({ className = "" }: VideoProps) => {
           </div>
         ) : (
           <iframe
-            ref={iframeRef}
             src="https://www.youtube.com/embed/SozfKGqfsUE?start=99"
             title="LB Profile Video"
             loading="lazy"
