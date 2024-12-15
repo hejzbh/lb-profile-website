@@ -1,9 +1,9 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Title from "@/components/ui/Title";
 import bgImg from "@/public/images/video-bg.webp";
-let timeout: any;
+let timeout: any; // eslint-disable-line
 
 type VideoProps = {
   className?: string;
