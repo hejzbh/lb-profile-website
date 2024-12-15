@@ -23,6 +23,7 @@ const Video = ({ className = "" }: VideoProps) => {
       <iframe
         src="https://www.youtube.com/embed/SozfKGqfsUE?start=99"
         title="LB Profile Video"
+        loading="lazy"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
