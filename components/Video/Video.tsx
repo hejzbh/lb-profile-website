@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Title from "@/components/ui/Title";
 import bgImg from "@/public/images/video-bg.webp";
