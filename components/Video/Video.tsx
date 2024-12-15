@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Title from "@/components/ui/Title";
 import bgImg from "@/public/images/video-bg.webp";
@@ -10,23 +10,41 @@ type VideoProps = {
 };
 
 const Video = ({ className = "" }: VideoProps) => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [showIframe, setShowIframe] = useState(false);
+  const sectionRef: React.Ref<HTMLElement> = useRef(null);
 
-  // Handle mouseover to preconnect to third-party resources (YouTube)
-  const handleMouseOver = () => {
-    const link = document.createElement("link");
-    link.rel = "preconnect";
-    link.href = "https://www.youtube.com";
-    document.head.appendChild(link);
-  };
+  useEffect(() => {
+    // Create an Intersection Observer to detect when the section is in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // If the section is in view, set the iframe to show
+        if (entries[0].isIntersecting) {
+          setShowIframe(true);
+          observer.disconnect(); // Stop observing once the iframe is shown
+        }
+      },
+      {
+        rootMargin: "300px", // Load the video when the section is 300px before entering the viewport
+      }
+    );
 
-  // Handle click to replace facade with iframe
-  const handleClick = () => {
-    setIsClicked(true);
-  };
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current); // Start observing the video section
+    }
+
+    // Clean up the observer when the component unmounts
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [sectionRef]);
 
   return (
-    <section className={`relative container py-20 ${className}`}>
+    <section
+      ref={sectionRef}
+      className={`relative container py-20 ${className}`}
+    >
       <Image
         src={bgImg}
         fill
@@ -37,12 +55,8 @@ const Video = ({ className = "" }: VideoProps) => {
       <Title variant="h2" className="text-center mb-5">
         Video
       </Title>
-      <div
-        onMouseOver={handleMouseOver}
-        onClick={handleClick}
-        className="relative cursor-pointer w-full"
-      >
-        {!isClicked ? (
+      <div className="relative cursor-pointer w-full">
+        {!showIframe ? (
           <div
             className="w-full h-[360px] md:h-[500px] lg:h-[630px] bg-gray-200 rounded-2xl flex items-center justify-center"
             style={{
