@@ -15,7 +15,7 @@ const Video = ({ className = "" }: VideoProps) => {
   useEffect(() => {
     timeout = setTimeout(() => {
       setIsClicked(true);
-    }, 1000);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []); // eslint-disable-line
