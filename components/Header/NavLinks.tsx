@@ -4,7 +4,7 @@ import Link from "next/link";
 import Dropdown from "@/components/ui/Dropdown";
 //import { useLocale } from "@/hooks/use-locale";
 import Text from "@/components/ui/Text";
-import { aboutUsPath } from "@/lib/paths";
+import { aboutUsPath, catalogPath } from "@/lib/paths";
 import { LocaleType } from "@/i18n-config";
 import { useLocale } from "@/hooks/use-locale";
 
@@ -26,7 +26,7 @@ const getLinks = (locale: LocaleType) => [
   { name: "Folien", href: "/" },
   {
     name: "Kataloge",
-    href: "/",
+    href: catalogPath(locale),
     sublinks: [
       { name: "Web Development", href: "/services/web" },
       { name: "Mobile Development", href: "/services/mobile" },
@@ -66,14 +66,18 @@ const NavLinks = ({ className = "", direction = "row" }: NavLinksProps) => {
                 <Dropdown
                   triggerClassName="p-2 px-4"
                   trigger={
-                    <div className="flex items-center">
+                    <Link
+                      href={link.href + ""}
+                      onClick={(e) => !link.href && e.preventDefault()}
+                      className="flex items-center"
+                    >
                       <Text
                         size="biggerSm"
                         className="text-white group-hover:text-textColors-hover transition"
                       >
                         {link.name}
                       </Text>
-                    </div>
+                    </Link>
                   }
                   items={link.sublinks}
                   dropdownClassName="bg-white rounded-lg"

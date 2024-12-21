@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     after: true,
   },
   images: {
-    domains: ["lbprofile.de"],
+    domains: ["lbprofile.de", "lbprofile.com"],
   },
   async rewrites() {
     return [

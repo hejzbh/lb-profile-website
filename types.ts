@@ -25,3 +25,9 @@ export type LocationType = {
   fax: string;
   email: string;
 };
+
+export type CatalogItemType = {
+  image: string;
+  name: string;
+  href: string;
+};

@@ -19,7 +19,7 @@ const AboutUsPage = async ({ params }: AboutUsProps) => {
     <div>
       <BackgroundImage src={img}>
         <Title variant="h1" size="xl" className="!text-white ">
-          About Us
+          ABOUT US
         </Title>
       </BackgroundImage>
       <Stats
