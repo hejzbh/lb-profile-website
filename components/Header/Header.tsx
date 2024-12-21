@@ -15,7 +15,7 @@ const Header = () => {
         <div className="items-center space-x-5 hidden lg:flex">
           <NavLinks />
           <LocaleSwitcher />
-          <Button variant="primary" dataTitle="Kontakt">
+          <Button variant="primary" contactBtn dataTitle="Kontakt">
             Kontakt
           </Button>
         </div>
