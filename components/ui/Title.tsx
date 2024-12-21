@@ -16,7 +16,7 @@ type TitleProps = {
 const fontSizesClasses = {
   sm: "text-[1.25rem] md:text-[1.4375rem] lg:text-[1.5rem]",
   lg: "text-[1.875rem] md:text-[2.4375rem] lg:text-[2.875rem]",
-  xl: "text-[2.125rem] md:text-[2.8125rem] lg:text-[3.5rem]",
+  xl: "text-[2.125rem] md:text-[2.9125rem] lg:text-[4rem]",
 };
 
 const Title = ({

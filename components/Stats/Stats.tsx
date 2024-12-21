@@ -57,7 +57,7 @@ const Stats = ({ className = "", locale }: StatsProps) => {
                 idx === statsItems.length - 1 && "col-span-2 sm:col-span-1"
               }`}
             >
-              <h2 className="text-btnColors-primary text-[32px] md:text-[45px] xl:text-[56px] font-semibold">
+              <h2 className="text-btnColors-primary text-[28px] sm:text-[32px] md:text-[45px] xl:text-[56px] font-semibold">
                 {item.value}
               </h2>
               <Text size="md">{item.description}</Text>

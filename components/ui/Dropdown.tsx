@@ -64,6 +64,12 @@ const Dropdown = ({
         {items.map((item, index) => (
           <li
             key={index}
+            onClick={() => {
+              if (item.onClick) {
+                item.onClick();
+                setIsOpen(false);
+              }
+            }}
             className={`flex px-2 space-x-2 cursor-pointer items-center rounded-md text-left hover:bg-bgColors-hover/10 hover:text-textColors-hover text-textColors-primary ${item.className}`}
           >
             {item.children}
@@ -77,15 +83,7 @@ const Dropdown = ({
                 </Text>
               </Link>
             ) : (
-              <div
-                className={`px-2 py-3 md:py-2 ${item.children && "pl-0"}`}
-                onClick={() => {
-                  if (item.onClick) {
-                    item.onClick();
-                    setIsOpen(false);
-                  }
-                }}
-              >
+              <div className={`px-2 py-3 md:py-2 ${item.children && "pl-0"}`}>
                 <Text withoutDefaultClass size="sm">
                   {item.name}
                 </Text>

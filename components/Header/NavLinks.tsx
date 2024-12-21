@@ -1,20 +1,18 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
 import Link from "next/link";
 import Dropdown from "@/components/ui/Dropdown";
 //import { useLocale } from "@/hooks/use-locale";
 import Text from "@/components/ui/Text";
+import { aboutUsPath } from "@/lib/paths";
+import { LocaleType } from "@/i18n-config";
+import { useLocale } from "@/hooks/use-locale";
 
-const links = [
+const getLinks = (locale: LocaleType) => [
   { name: "Home", href: "/" },
   {
     name: "Uber Uns",
-    href: "/about",
-    sublinks: [
-      { name: "Web Development", href: "/services/web" },
-      { name: "Mobile Development", href: "/services/mobile" },
-      { name: "UI/UX Design", href: "/services/design" },
-    ],
+    href: aboutUsPath(locale),
   },
   {
     name: "PVC Profil",
@@ -49,7 +47,8 @@ type NavLinksProps = {
 };
 
 const NavLinks = ({ className = "", direction = "row" }: NavLinksProps) => {
-  //const locale = useLocale();
+  const { locale } = useLocale();
+  const links = useMemo(() => getLinks(locale), [locale]);
 
   return (
     <nav className={`${className}`}>
