@@ -6,7 +6,7 @@ import { CatalogItemType } from "@/types";
 import Link from "next/link";
 import Image from "next/image";
 
-const getCatalogItems = (locale: LocaleType): CatalogItemType[] => {
+export const getCatalogItems = (locale: LocaleType): CatalogItemType[] => {
   return [
     {
       name: {

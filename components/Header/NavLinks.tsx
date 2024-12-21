@@ -7,6 +7,7 @@ import Text from "@/components/ui/Text";
 import { aboutUsPath, catalogPath } from "@/lib/paths";
 import { LocaleType } from "@/i18n-config";
 import { useLocale } from "@/hooks/use-locale";
+import { getCatalogItems } from "../Catalog/CatalogList";
 
 const getLinks = (locale: LocaleType) => [
   { name: "Home", href: "/" },
@@ -27,13 +28,8 @@ const getLinks = (locale: LocaleType) => [
   {
     name: "Kataloge",
     href: catalogPath(locale),
-    sublinks: [
-      { name: "Web Development", href: "/services/web" },
-      { name: "Mobile Development", href: "/services/mobile" },
-      { name: "UI/UX Design", href: "/services/design" },
-      { name: "UI/UX Arch", href: "/services/design" },
-      { name: "UI/UX Test", href: "/services/design" },
-    ],
+    sublinks: getCatalogItems(locale),
+    dropdownClassName: "!min-w-[180px]",
   },
   {
     name: "Actuelles",
@@ -80,7 +76,7 @@ const NavLinks = ({ className = "", direction = "row" }: NavLinksProps) => {
                     </Link>
                   }
                   items={link.sublinks}
-                  dropdownClassName="bg-white rounded-lg"
+                  dropdownClassName={`bg-white rounded-lg ${link.dropdownClassName}`}
                 />
               ) : (
                 <Link
