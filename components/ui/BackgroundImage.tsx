@@ -23,7 +23,7 @@ const BackgroundImage = ({
         alt="LB-Profile"
       />
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-[-1]"></div>
-      <div className="container mx-auto min-h-[30dvh] md:min-h-[50dvh] pt-28 py-10 z-[2] flex flex-col justify-center items-center">
+      <div className="container mx-auto min-h-[37dvh] md:min-h-[50dvh] pt-28 py-10 z-[2] flex flex-col justify-center items-center">
         {children}
       </div>
     </div>
