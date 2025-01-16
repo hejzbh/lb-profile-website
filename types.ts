@@ -31,3 +31,12 @@ export type CatalogItemType = {
   name: string;
   href: string;
 };
+
+export type TeamMemberType = {
+  name: string;
+  role: string;
+  tel?: string;
+  telM: string[];
+  fax?: string;
+  email: string;
+};

@@ -18,23 +18,20 @@ const getLinks = (locale: LocaleType) => [
   {
     name: "PVC Profil",
     sublinks: [
-      { name: "Web Development", href: "/services/web" },
-      { name: "Mobile Development", href: "/services/mobile" },
-      { name: "UI/UX Design", href: "/services/design" },
+      { name: "U izradi...", href: "/" },
+      { name: "U izradi...", href: "/" },
+      { name: "U izradi...", href: "/" },
     ],
   },
-  { name: "Wo kaufen", href: "/" },
-  { name: "Folien", href: "/" },
+  /**  { name: "Wo kaufen", href: "/" },
+  { name: "Folien", href: "/" }, */
   {
     name: "Kataloge",
     href: catalogPath(locale),
     sublinks: getCatalogItems(locale),
     dropdownClassName: "!min-w-[180px]",
   },
-  {
-    name: "Actuelles",
-    href: "/",
-  },
+  /** */
 ];
 
 type NavLinksProps = {

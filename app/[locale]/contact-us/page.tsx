@@ -3,15 +3,32 @@ import contactImg from "@/public/images/contact.webp";
 import BackgroundImage from "@/components/ui/BackgroundImage";
 
 import Title from "@/components/ui/Title";
+import Team from "@/components/Contact/Team";
+import { LocaleType } from "@/i18n-config";
 
-const ContactPage = () => {
+type ContactProps = {
+  params: Promise<{
+    locale: LocaleType;
+  }>;
+};
+
+const ContactPage = async ({ params }: ContactProps) => {
+  const { locale } = await params;
   return (
     <div>
       <BackgroundImage src={contactImg}>
-        <Title variant="h1" className="!text-white">
+        <Title variant="h1" size="xl" className="!text-white">
           CONTACT US
         </Title>
       </BackgroundImage>
+
+      <main className="container py-20 space-y-20">
+        {/** Team Bosnian */}
+        <Team location="bosnian" locale={locale} />
+
+        {/** Team Deutschland */}
+        <Team location="deutschland" locale={locale} />
+      </main>
     </div>
   );
 };
