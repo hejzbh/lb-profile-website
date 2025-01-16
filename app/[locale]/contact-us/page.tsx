@@ -23,6 +23,10 @@ const ContactPage = async ({ params }: ContactProps) => {
       </BackgroundImage>
 
       <main className="container py-20 space-y-20">
+        <h1 className="text-[2.8rem] md:text-[5rem] container text-center">
+          U IZRADI...
+        </h1>
+
         {/** Team Bosnian */}
         <Team location="bosnian" locale={locale} />
 
