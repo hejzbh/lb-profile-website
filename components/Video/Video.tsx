@@ -35,10 +35,10 @@ const Video = ({ className = "" }: VideoProps) => {
     // Clean up the observer when the component unmounts
     return () => {
       if (sectionRef.current) {
-        observer.unobserve(sectionRef.current); // eslint-disable
+        observer.unobserve(sectionRef.current); // eslint-disable-line
       }
     };
-  }, [sectionRef]);
+  }, [sectionRef]); // eslint-disable-line
 
   return (
     <section

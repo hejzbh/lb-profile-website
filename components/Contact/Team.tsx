@@ -1,5 +1,4 @@
 import React from "react";
-import Title from "@/components/ui/Title";
 import { LocaleType } from "@/i18n-config";
 import { TeamMemberType } from "@/types";
 
@@ -89,7 +88,7 @@ const getContent = (locale: LocaleType, location: TeamProps["location"]) => {
 };
 
 const Team = ({ className = "", location, locale }: TeamProps) => {
-  const content = getContent(locale, location);
+  getContent(locale, location);
 
   return (
     <section className={`${className}`}>
