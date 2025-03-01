@@ -1,5 +1,6 @@
 import React from "react";
 import Text from "./ui/Text";
+import Image from "next/image";
 
 interface RichTextBlock {
   type: "heading" | "paragraph" | "text" | "image" | "list" | "quote";
@@ -56,16 +57,12 @@ const RichText: React.FC<RichTextProps> = ({ content, className }) => {
       case "image":
         return block.image ? (
           <div style={{ textAlign: "center" }}>
-            <img
+            <Image
               src={block.image.url}
               alt={block.image.alternativeText || "Image"}
-              style={{
-                width: "100%",
-                maxWidth: "500px",
-                height: "500px",
-                maxHeight: "600px",
-                objectFit: "contain",
-              }}
+              width={500}
+              height={500}
+              objectFit="contain"
             />
           </div>
         ) : null;

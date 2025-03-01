@@ -10,7 +10,7 @@ import RichText from "../RichText";
 type ProductionProps = {
   className?: string;
   title: string;
-  description: any;
+  description: any; // eslint-disable-line
 };
 
 const ShortAboutUs = ({

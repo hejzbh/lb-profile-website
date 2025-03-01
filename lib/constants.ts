@@ -1,7 +1,7 @@
 import { LocaleType } from "@/i18n-config";
 import { TeamMemberType } from "@/types";
 
-export const CACHE_DURATION = 1;
+export const CACHE_DURATION = 86400; // 24h
 
 export const getTeamMembers = (locale: LocaleType) => {
   return {

@@ -18,7 +18,7 @@ const getTeamMembers = (
         name: "Mustafa Basic",
         role: {
           en: "CEO / General Manager",
-          bs: "CEO / Generalni direktor",
+          "bs-BA": "CEO / Generalni direktor",
           de: "CEO / Geschäftsführer",
         }[locale],
         telM: ["+387 61 975 139"],
@@ -28,7 +28,7 @@ const getTeamMembers = (
         name: "Nermin Milanović",
         role: {
           en: "CEO / General Manager",
-          bs: "CEO / Generalni direktor",
+          "bs-BA": "CEO / Generalni direktor",
           de: "CEO / Geschäftsführer",
         }[locale],
         telM: ["+387 61 975 139"],
@@ -43,19 +43,19 @@ const getContent = (locale: LocaleType, location: TeamProps["location"]) => {
   return {
     title: {
       bosnian: {
-        bs: "Proizvodna lokacija Bosna i Hercegovina",
+        "bs-BA": "Proizvodna lokacija Bosna i Hercegovina",
         de: "Standort Produktion Bosnien und Herzegowina",
         en: "Production site Bosnia and Herzegovina",
       },
       deutschland: {
-        bs: "Njemačka lokacija",
+        "bs-BA": "Njemačka lokacija",
         de: "Standort Deutschland",
         en: "Germany location",
       },
     }[location][locale],
     location: {
       bosnian: {
-        bs: {
+        "bs-BA": {
           name: "Nikole Tesle 71, 74 000 Doboj, BiH",
           mapHref: "https://maps.app.goo.gl/B4GYxbe51RDZQgVJ9",
         },
@@ -69,7 +69,7 @@ const getContent = (locale: LocaleType, location: TeamProps["location"]) => {
         },
       },
       deutschland: {
-        bs: {
+        "bs-BA": {
           name: "Am Schlirfer Weg 2-4, 36358 Herbstein, Njemacka",
           mapHref: "https://maps.app.goo.gl/4Zm1pnVxo7YpABgx9",
         },

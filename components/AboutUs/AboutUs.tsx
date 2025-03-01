@@ -1,6 +1,5 @@
 import React from "react";
 import Title from "@/components/ui/Title";
-import Text from "@/components/ui/Text";
 import Image from "next/image";
 import lbImg from "@/public/images/statistics.webp";
 import RichText from "../RichText";
