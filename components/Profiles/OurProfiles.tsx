@@ -5,18 +5,21 @@ import ProfilesList from "./ProfilesList";
 
 type OurProfilesType = {
   className?: string;
+  title: string;
+  description: string;
 };
 
-const OurProfiles = ({ className = "" }: OurProfilesType) => {
+const OurProfiles = ({
+  className = "",
+  title,
+  description,
+}: OurProfilesType) => {
   return (
     <section className={`container ${className}`}>
       {/** Heading */}
       <div className="text-center mb-10">
-        <Title variant="h2">Einige unserer Profile</Title>
-        <Text size="md">
-          Wir extrudieren PVC profile für PVC-Fenster und -Türen. Fenster und
-          Türen. LB Profile gmbh. LB Profile Doboj.
-        </Text>
+        <Title variant="h2">{title}</Title>
+        <Text size="md">{description}</Text>
       </div>
 
       {/** List */}

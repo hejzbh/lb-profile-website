@@ -1,6 +1,8 @@
 import { LocaleType } from "@/i18n-config";
 import { TeamMemberType } from "@/types";
 
+export const CACHE_DURATION = 1;
+
 export const getTeamMembers = (locale: LocaleType) => {
   return {
     // Mustafa
@@ -9,7 +11,7 @@ export const getTeamMembers = (locale: LocaleType) => {
       role: {
         en: "CEO / General Director",
         de: "CEO / Geschäftsführer",
-        bs: "CEO / Generalni director",
+        "bs-BA": "CEO / Generalni director",
       }[locale],
       telM: ["+387 61 975 139"],
       email: "mustafa.basic@lbprofilebh.ba",
@@ -20,7 +22,7 @@ export const getTeamMembers = (locale: LocaleType) => {
       role: {
         en: "Logistics",
         de: "Logistics / Logistik",
-        bs: "Logistika",
+        "bs-BA": "Logistika",
       }[locale],
       telM: ["+387 61 507 862"],
       email: "tabakovic.asmir@lbprofilebh.ba",
@@ -31,7 +33,7 @@ export const getTeamMembers = (locale: LocaleType) => {
       role: {
         en: "Production manager",
         de: "Technologist / Technologe",
-        bs: "Logistika",
+        "bs-BA": "Logistika",
       }[locale],
       telM: ["+387 63 452 338"],
       email: "halilovic.e@lbprofilebh.ba",

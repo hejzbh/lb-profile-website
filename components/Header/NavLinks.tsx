@@ -8,30 +8,49 @@ import { aboutUsPath, catalogPath } from "@/lib/paths";
 import { LocaleType } from "@/i18n-config";
 import { useLocale } from "@/hooks/use-locale";
 import { getCatalogItems } from "../Catalog/CatalogList";
+const texts = {
+  home: {
+    de: "Startseite",
+    en: "Home",
+    "bs-BA": "Početna",
+  },
+  about_us: {
+    de: "Über uns",
+    en: "About us",
+    "bs-BA": "O nama",
+  },
+  pvc_profile: {
+    de: "PVC Profil",
+    en: "PVC Profile",
+    "bs-BA": "PVC Profil",
+  },
+  catalogs: {
+    de: "Kataloge",
+    en: "Catalogs",
+    "bs-BA": "Katalozi",
+  },
+};
 
 const getLinks = (locale: LocaleType) => [
-  { name: "Home", href: "/" },
+  { name: texts["home"][locale], href: "/" },
   {
-    name: "Uber Uns",
+    name: texts["about_us"][locale],
     href: aboutUsPath(locale),
   },
   {
-    name: "PVC Profil",
+    name: texts["pvc_profile"][locale],
     sublinks: [
       { name: "U izradi...", href: "/" },
       { name: "U izradi...", href: "/" },
       { name: "U izradi...", href: "/" },
     ],
   },
-  /**  { name: "Wo kaufen", href: "/" },
-  { name: "Folien", href: "/" }, */
   {
-    name: "Kataloge",
+    name: texts["catalogs"][locale],
     href: catalogPath(locale),
     sublinks: getCatalogItems(locale),
     dropdownClassName: "!min-w-[180px]",
   },
-  /** */
 ];
 
 type NavLinksProps = {

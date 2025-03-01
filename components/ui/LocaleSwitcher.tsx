@@ -67,7 +67,7 @@ const LocaleSwitcher = ({ className = "" }: LocaleSwitcherProps) => {
           },
           {
             name: "Bosanski",
-            onClick: () => changeLocale("bs"),
+            onClick: () => changeLocale("bs-BA"),
             children: (
               <Image
                 src={bsImg}
@@ -79,7 +79,7 @@ const LocaleSwitcher = ({ className = "" }: LocaleSwitcherProps) => {
               />
             ),
             className:
-              locale === "bs" ? "!text-textColors-active font-[500]" : "",
+              locale === "bs-BA" ? "!text-textColors-active font-[500]" : "",
           },
         ]}
       />

@@ -14,6 +14,7 @@ type ButtonProps = {
   onClick?: () => void;
   disabled?: boolean;
   contactBtn?: boolean;
+  href?: string;
 };
 
 const variantClasses = {
@@ -32,6 +33,7 @@ const Button = ({
   dataTitle = "Click",
   ref,
   contactBtn,
+  href,
 }: ButtonProps) => {
   const { locale } = useLocale();
   const router = useRouter();
@@ -41,6 +43,10 @@ const Button = ({
       ref={ref}
       onClick={() => {
         onClick();
+
+        if (href) {
+          router.push(href);
+        }
 
         if (contactBtn) {
           router.push(contactUsPath(locale));

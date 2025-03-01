@@ -12,7 +12,7 @@ export const getCatalogItems = (locale: LocaleType): CatalogItemType[] => {
       name: {
         en: "LB COMFORT Sliding Window System",
         de: "LB COMFORT Schiebeanlage",
-        bs: "LB COMFORT Klizni Prozorski Sistem",
+        "bs-BA": "LB COMFORT Klizni Prozorski Sistem",
       }[locale],
       href: "https://lbprofile.com/wp-content/uploads/2022/08/LB-COMFORT.pdf",
       image: "https://lbprofile.com/wp-content/uploads/2022/10/lb-comfort.jpg",
@@ -21,7 +21,7 @@ export const getCatalogItems = (locale: LocaleType): CatalogItemType[] => {
       name: {
         en: "LB CONTOUR from PAD Profiles",
         de: "LB CONTOUR aus PAD Profilen",
-        bs: "LB CONTOUR od PAD Profila",
+        "bs-BA": "LB CONTOUR od PAD Profila",
       }[locale],
       href: "https://lbprofile.com/wp-content/uploads/2022/08/pad-contour-from-pad.pdf",
       image:
@@ -31,7 +31,7 @@ export const getCatalogItems = (locale: LocaleType): CatalogItemType[] => {
       name: {
         en: "PAD CONTOUR Window System",
         de: "PAD CONTOUR Fenstersystem",
-        bs: "PAD CONTOUR Prozorski Sistem",
+        "bs-BA": "PAD CONTOUR Prozorski Sistem",
       }[locale],
       href: "https://lbprofile.com/wp-content/uploads/2022/08/pad-contour.pdf",
       image:
@@ -41,7 +41,7 @@ export const getCatalogItems = (locale: LocaleType): CatalogItemType[] => {
       name: {
         en: "Window System with Stop and Central Gasket",
         de: "Fenstersystem Anschlag und Mitteldichtung",
-        bs: "Prozorski Sistem sa Zaustavnim i Središnjim Brtvljenjem",
+        "bs-BA": "Prozorski Sistem sa Zaustavnim i Središnjim Brtvljenjem",
       }[locale],
       href: "https://lbprofile.com/wp-content/uploads/2022/08/PCD_ADMD_70_600.pdf",
       image:
@@ -51,7 +51,7 @@ export const getCatalogItems = (locale: LocaleType): CatalogItemType[] => {
       name: {
         en: "LB Profile BH Catalog",
         de: "LB Profile BH Katalog",
-        bs: "LB Profil BH Katalog",
+        "bs-BA": "LB Profil BH Katalog",
       }[locale],
       href: "https://lbprofile.com/wp-content/uploads/2024/05/LB-profile-DE-web.pdf",
       image:

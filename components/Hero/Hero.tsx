@@ -6,9 +6,11 @@ import Button from "@/components/ui/Button";
 
 type HeroProps = {
   className?: string;
+  title: string;
+  buttonText: string;
 };
 
-const Hero = ({ className = "" }: HeroProps) => {
+const Hero = ({ className = "", title, buttonText }: HeroProps) => {
   return (
     <section className={`relative ${className}`}>
       <Image
@@ -21,10 +23,10 @@ const Hero = ({ className = "" }: HeroProps) => {
       <div className="absolute top-0 left-0 w-full h-full bg-white z-[-1] opacity-10"></div>
       <div className="container flex flex-col justify-center items-start min-h-[80dvh]">
         <Title size="xl" className="max-w-[730px] mb-4" variant="h1">
-          PVC-PROFILSYSTEME FUR FENSTER UND TUREN, EINZELHANDEL
+          {title?.toUpperCase()}
         </Title>
         <Button variant="primary" className="font-semibold">
-          Mehr
+          {buttonText}
         </Button>
       </div>
     </section>

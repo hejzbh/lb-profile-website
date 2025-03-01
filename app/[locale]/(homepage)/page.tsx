@@ -2,10 +2,13 @@ import { LocaleType } from "@/i18n-config";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats/Stats";
 import OurProfiles from "@/components/Profiles";
-import Production from "@/components/Production";
+import ShortAboutUs from "@/components/ShortAboutUs";
 import Video from "@/components/Video/Video";
-import Blog from "@/components/Blog";
 import AboutUs from "@/components/AboutUs";
+import { unstable_cache } from "next/cache";
+import { CACHE_DURATION } from "@/lib/constants";
+import { API } from "@/lib/axios";
+import { HomepageText } from "@/types";
 
 type HomeProps = {
   params: Promise<{
@@ -13,17 +16,44 @@ type HomeProps = {
   }>;
 };
 
+const getHomeContent = unstable_cache(
+  async (locale: LocaleType) => {
+    const response = await API.get("/home" + `?locale=${locale}`);
+
+    return response?.data?.data;
+  },
+  ["global_content"],
+  {
+    revalidate: CACHE_DURATION,
+  }
+);
+
 export default async function Home({ params }: HomeProps) {
   const { locale } = await params;
+
+  const text: HomepageText = await getHomeContent(locale);
+
   return (
     <>
-      <Hero />
+      <Hero title={text.hero_title} buttonText={text.hero_button} />
       <Stats locale={locale} className="mt-[-105px] mb-28 lg:mb-36" />
-      <OurProfiles className="mb-28 lg:mb-36" />
-      <Production className="mb-28 lg:mb-36" />
-      <Blog className="mb-28 lg:mb-36" />
-      <Video className="mb-28 lg:mb-36" />
-      <AboutUs className="mb-28 lg:mb-36" />
+      <OurProfiles
+        title={text.produkte_title}
+        description={text.produkte_description}
+        className="mb-28 lg:mb-36"
+      />
+      <ShortAboutUs
+        title={text.about_title}
+        description={text.about_text}
+        className="mb-28 lg:mb-36"
+      />
+
+      <Video title={text.video_title} className="mb-28 lg:mb-36" />
+      <AboutUs
+        title={text.about_us_two}
+        description={text.about_us_two_text}
+        className="mb-28 lg:mb-36"
+      />
     </>
   );
 }

@@ -7,9 +7,10 @@ import Button from "@/components/ui/Button";
 
 type VideoProps = {
   className?: string;
+  title: string;
 };
 
-const Video = ({ className = "" }: VideoProps) => {
+const Video = ({ className = "", title }: VideoProps) => {
   const [showIframe, setShowIframe] = useState(false);
   const sectionRef: React.Ref<HTMLElement> = useRef(null);
 
@@ -53,7 +54,7 @@ const Video = ({ className = "" }: VideoProps) => {
         draggable={false}
       />
       <Title variant="h2" className="text-center mb-5">
-        Video
+        {title}
       </Title>
       <div className="relative cursor-pointer w-full">
         {!showIframe ? (

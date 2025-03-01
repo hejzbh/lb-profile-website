@@ -20,7 +20,7 @@ function getStatsItems(locale: LocaleType): StatsItem[] {
       description: {
         en: "Engineers and workers",
         de: "Ingenieure und Arbeiter",
-        bs: "Inžinjera i radnika",
+        "bs-BA": "Inžinjera i radnika",
       }[locale],
     },
     {
@@ -28,7 +28,7 @@ function getStatsItems(locale: LocaleType): StatsItem[] {
       description: {
         en: "Distributors in the EU",
         de: "Distributoren in der EU",
-        bs: "Distributera u EU",
+        "bs-BA": "Distributera u EU",
       }[locale],
     },
     {
@@ -36,7 +36,7 @@ function getStatsItems(locale: LocaleType): StatsItem[] {
       description: {
         en: "Successful projects",
         de: "Erfolgreiche Projekte",
-        bs: "Uspješnih projekata",
+        "bs-BA": "Uspješnih projekata",
       }[locale],
     },
   ];

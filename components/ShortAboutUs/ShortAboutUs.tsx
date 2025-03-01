@@ -5,12 +5,19 @@ import Title from "@/components/ui/Title";
 import Text from "@/components/ui/Text";
 import vector1 from "@/public/images/vector-1.webp";
 import vector2 from "@/public/images/vector-2.webp";
+import RichText from "../RichText";
 
 type ProductionProps = {
   className?: string;
+  title: string;
+  description: any;
 };
 
-const Production = ({ className = "" }: ProductionProps) => {
+const ShortAboutUs = ({
+  className = "",
+  title,
+  description,
+}: ProductionProps) => {
   return (
     <section
       className={`container flex items-center justify-between gap-10 flex-col-reverse  md:flex-row ${className}`}
@@ -28,15 +35,9 @@ const Production = ({ className = "" }: ProductionProps) => {
       {/** Text */}
       <div className="flex-1">
         <Title className="mb-[24px]" variant="h2" size="lg">
-          Produktion
+          {title}
         </Title>
-        <Text>
-          Wir können ein Folienprofil nach Ihren Wünschen herstellen und wie es
-          aussieht, können Sie es selbst sehen. Wir beschäftigen uns mit dem
-          Extrudieren von PVC-Profilen für Fenster und Türen. Polyvinylchlorid
-          oder PVC ist ein moderner Kunststoff und ein sehr wichtiges Mitglied
-          der breiten Polymerfamilie. Die chemische Formel von PVC ist CH2=CHCL.
-        </Text>
+        <RichText content={description} />
         <div className="my-[20px] flex items-center space-x-10">
           <div className="font-semibold flex items-center space-x-5">
             <Image
@@ -62,16 +63,9 @@ const Production = ({ className = "" }: ProductionProps) => {
             <Text size="xl">57%</Text>
           </div>
         </div>
-        <Text>
-          Einer der ersten kommerziell entwickelten Kunststoffe ist noch heute
-          weit verbreitet. PVC ist in einer Vielzahl von Formen erhältlich und
-          bietet eine Vielzahl von Eigenschaften, die es für eine Vielzahl von
-          Anwendungen im modernen Leben geeignet machen, von Blutbeuteln über
-          Kinderspielzeug, Wasserhähne, Kabelisolierungen und Fensterprofile.
-        </Text>
       </div>
     </section>
   );
 };
 
-export default Production;
+export default ShortAboutUs;
