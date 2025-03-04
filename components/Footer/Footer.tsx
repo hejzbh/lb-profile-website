@@ -143,6 +143,7 @@ const Footer = ({ className = "" }: FooterProps) => {
         src={webImg}
         fill
         className="z-[-2] object-cover"
+        style={{ filter: "blur(5px)" }}
         alt="Background"
         draggable={false}
       />

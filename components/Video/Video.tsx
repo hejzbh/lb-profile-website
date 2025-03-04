@@ -25,15 +25,15 @@ const Video = ({ className = "", title }: VideoProps) => {
         }
       },
       {
-        rootMargin: "300px", // Load the video when the section is 300px before entering the viewport
+        rootMargin: "300px",
       }
     );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current); // Start observing the video section
+      observer.observe(sectionRef.current);
     }
 
-    // Clean up the observer when the component unmounts
+    // Clean up
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current); // eslint-disable-line
