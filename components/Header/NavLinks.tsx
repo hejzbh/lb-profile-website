@@ -32,7 +32,7 @@ const texts = {
 };
 
 export const getLinks = (locale: LocaleType) => [
-  { name: texts["home"][locale], href: "/" },
+  { name: texts["home"][locale], href: `/${locale}` },
   {
     name: texts["about_us"][locale],
     href: aboutUsPath(locale),
