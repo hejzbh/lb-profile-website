@@ -7,6 +7,9 @@ import Text from "@/components/ui/Text";
 import Button from "@/components/ui/Button";
 import SocialMedia from "@/components/Footer/SocialMedia";
 import { useLocale } from "@/hooks/use-locale";
+import { getLinks } from "../Header/NavLinks";
+import Link from "next/link";
+import { catalogPath } from "@/lib/paths";
 
 type FooterProps = {
   className?: string;
@@ -21,13 +24,15 @@ const descText = {
 
 const Footer = ({ className = "" }: FooterProps) => {
   const { locale } = useLocale();
+  const links = getLinks(locale);
+
   return (
     <footer
       className={`bg-bgColors-primary pb-10 pt-[16rem] relative z-[1] ${className}`}
     >
       <main className="container">
         {/** TOP */}
-        <div className="grid grid-cols-1 gap-10 md:gap-2 md:grid-cols-[40%,20%,20%,20%]">
+        <div className="grid grid-cols-1 gap-10 md:gap-2 md:grid-cols-[35%,20%,25%,20%]">
           {/** About */}
           <div className=" max-w-[480px]">
             <Logo imageClassName="min-w-[180px] max-w-[250px] md:min-w-[270px]" />
@@ -46,42 +51,48 @@ const Footer = ({ className = "" }: FooterProps) => {
           {/** Links 1 */}
           <div>
             <Text className="text-white font-semibold" size="xl">
-              NASLOV
+              {{ en: "Links", de: "Links", "bs-BA": "Linkovi" }[locale]}
             </Text>
             <ul className="space-y-6 mt-6">
-              <li>
-                <Text className="text-white">Home</Text>
-              </li>
-              <li>
-                <Text className="text-white">Uber uns</Text>
-              </li>
-              <li>
-                <Text className="text-white">PVC Profil</Text>
-              </li>
-              <li>
-                <Text className="text-white">Wo kaufen</Text>
-              </li>
+              {links?.map((link, i) => (
+                <li key={i}>
+                  <Link
+                    title={link.name}
+                    href={link.href as string}
+                    className="text-white hover:text-textColors-hover transition"
+                  >
+                    <Text withoutDefaultClass>{link.name}</Text>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/** Links 2 */}
           <div>
             <Text className="text-white font-semibold" size="xl">
-              NASLOV
+              {
+                {
+                  de: "Kataloge",
+                  en: "Catalogs",
+                  "bs-BA": "Katalozi",
+                }[locale]
+              }
             </Text>
             <ul className="space-y-6 mt-6">
-              <li>
-                <Text className="text-white">Folien</Text>
-              </li>
-              <li>
-                <Text className="text-white">Kataloge</Text>
-              </li>
-              <li>
-                <Text className="text-white">Actuelles</Text>
-              </li>
-              <li>
-                <Text className="text-white">Sprache</Text>
-              </li>
+              {links
+                ?.find((link) => link.href === catalogPath(locale))
+                ?.sublinks?.map((link, i) => (
+                  <li key={i}>
+                    <Link
+                      title={link.name}
+                      href={link.href as string}
+                      className="text-white hover:text-textColors-hover transition"
+                    >
+                      <Text withoutDefaultClass>{link.name}</Text>
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Timeline } from "@/components/ui/Timeline";
 import Text from "@/components/ui/Text";
 import Image from "next/image";
@@ -7,68 +7,59 @@ import growImg from "@/public/images/grow.webp";
 
 type HistoryProps = {
   className?: string;
+  title: string;
+  description: string;
+  data?: { title: string; content: any }[];
 };
 
-const History = ({ className = "" }: HistoryProps) => {
+const History = ({
+  className = "",
+  title,
+  description,
+  data,
+}: HistoryProps) => {
+  const dataImages = useMemo(
+    () => [
+      <Image
+        key={"0"}
+        src={growImg}
+        alt="LB Profile grow"
+        loading="lazy"
+        className="rounded-3xl mt-5"
+        width={200}
+        height={660}
+      />,
+      null,
+      null,
+      <Image
+        key={"1"}
+        src={hifaOil}
+        alt="HIFA OIL"
+        loading="lazy"
+        className="rounded-3xl mt-5"
+        width={500}
+        height={660}
+      />,
+    ],
+    []
+  );
+
   return (
     <section className={`${className}`}>
       <Timeline
-        data={[
-          {
-            title: "Entwicklung - 1960",
+        data={
+          data?.map(({ title, content }, idx) => ({
+            title,
             content: (
-              <div>
-                <Text>
-                  - Entwicklung von Werkstoffen und Verarbeitungs-prozessen.
-                </Text>
-                <Image
-                  src={growImg}
-                  alt="LB Profile grow"
-                  loading="lazy"
-                  className="rounded-3xl mt-5"
-                  width={200}
-                  height={660}
-                />
+              <div key={idx}>
+                <Text>{content}</Text>
+                {dataImages[idx]}
               </div>
             ),
-          },
-          {
-            title: "Holländischen Wavin Konzern - 1980",
-            content: (
-              <Text>
-                Zugehörigkeit zum holländischen Wavin Konzern. Zugang zu den
-                Forschungs- und Entwicklungs- ressourcen dieses in Europa
-                führenden Kunststoff-verarbeitenden Unternehmens.
-              </Text>
-            ),
-          },
-          {
-            title: "Britischen Litchfield - 1994",
-            content: (
-              <Text>
-                - Zugehörig zur britischen Litchfield Group of Companies.
-              </Text>
-            ),
-          },
-          {
-            title: "HIFA OIL - 2017",
-            content: (
-              <div>
-                <Text>Eigentum von HIFA OIL aus Bosnien.</Text>
-                <Image
-                  src={hifaOil}
-                  alt="HIFA OIL"
-                  loading="lazy"
-                  className="rounded-3xl mt-5"
-                  width={500}
-                  height={660}
-                />
-              </div>
-            ),
-          },
-        ]}
-        title="LB Profile"
-        description="DIE GESCHICHTE"
+          })) as any
+        }
+        title={title}
+        description={description?.toUpperCase()}
       />
     </section>
   );

@@ -31,7 +31,7 @@ const texts = {
   },
 };
 
-const getLinks = (locale: LocaleType) => [
+export const getLinks = (locale: LocaleType) => [
   { name: texts["home"][locale], href: "/" },
   {
     name: texts["about_us"][locale],
@@ -39,6 +39,7 @@ const getLinks = (locale: LocaleType) => [
   },
   {
     name: texts["pvc_profile"][locale],
+    href: "/",
     sublinks: [
       { name: "U izradi...", href: "/" },
       { name: "U izradi...", href: "/" },

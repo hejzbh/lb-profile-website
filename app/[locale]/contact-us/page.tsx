@@ -5,6 +5,10 @@ import BackgroundImage from "@/components/ui/BackgroundImage";
 import Title from "@/components/ui/Title";
 import Team from "@/components/Contact/Team";
 import { LocaleType } from "@/i18n-config";
+import { ContactText } from "@/types";
+import { CACHE_DURATION } from "@/lib/constants";
+import { unstable_cache } from "next/cache";
+import { API } from "@/lib/axios";
 
 type ContactProps = {
   params: Promise<{
@@ -12,13 +16,27 @@ type ContactProps = {
   }>;
 };
 
+const getAboutContent = unstable_cache(
+  async (locale: LocaleType) => {
+    const response = await API.get("/contact" + `?locale=${locale}`);
+
+    return response?.data?.data;
+  },
+  ["global_content"],
+  {
+    revalidate: CACHE_DURATION,
+  }
+);
+
 const ContactPage = async ({ params }: ContactProps) => {
   const { locale } = await params;
+  const text: ContactText = await getAboutContent(locale);
+
   return (
     <div>
       <BackgroundImage src={contactImg}>
         <Title variant="h1" size="xl" className="!text-white">
-          CONTACT US
+          {text.title?.toUpperCase()}
         </Title>
       </BackgroundImage>
 

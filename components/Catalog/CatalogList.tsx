@@ -5,6 +5,7 @@ import Text from "@/components/ui/Text";
 import { CatalogItemType } from "@/types";
 import Link from "next/link";
 import Image from "next/image";
+import RichText from "../RichText";
 
 export const getCatalogItems = (locale: LocaleType): CatalogItemType[] => {
   return [
@@ -63,20 +64,25 @@ export const getCatalogItems = (locale: LocaleType): CatalogItemType[] => {
 type CatalogListProps = {
   className?: string;
   locale: LocaleType;
+  title: string;
+  description: any;
 };
 
-const CatalogList = ({ className = "", locale }: CatalogListProps) => {
+const CatalogList = ({
+  className = "",
+  locale,
+  title,
+  description,
+}: CatalogListProps) => {
   const catalogItems = getCatalogItems(locale);
 
   return (
     <section className={`${className}`}>
       {" "}
       <Title variant="h2" size="lg">
-        Kataloge, eine Übersicht über das PVC-Profilsystem
+        {title}{" "}
       </Title>
-      <Text>
-        Unter diesem Link können Sie den offiziellen Katalog herunterladen
-      </Text>
+      <RichText content={description} />
       <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-20">
         {catalogItems?.map((catalog) => (
           <li key={catalog.href}>

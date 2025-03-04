@@ -48,21 +48,23 @@ const LocationCard = ({ className = "", location }: LocationCardProps) => {
             </Text>
           </Link>
         </div>
-        <div className="flex items-center">
-          <PhoneCall className="w-6 h-6 md:w-7 md:h-7 mr-3 text-gray-600" />
-          <Link
-            title={location.fax}
-            className="group"
-            href={`tel:${location.fax}`}
-          >
-            <Text
-              size="lg"
-              className="transition active:text-textColors-active group-hover:md:text-textColors-hover"
+        {location?.fax && (
+          <div className="flex items-center">
+            <PhoneCall className="w-6 h-6 md:w-7 md:h-7 mr-3 text-gray-600" />
+            <Link
+              title={location.fax}
+              className="group"
+              href={`tel:${location.fax}`}
             >
-              Fax: {location.fax}
-            </Text>
-          </Link>
-        </div>
+              <Text
+                size="lg"
+                className="transition active:text-textColors-active group-hover:md:text-textColors-hover"
+              >
+                Fax: {location.fax}
+              </Text>
+            </Link>
+          </div>
+        )}
         <div className="flex items-center">
           <Mail className="w-6 h-6 md:w-7 md:h-7 mr-3 text-gray-600" />
           <Link

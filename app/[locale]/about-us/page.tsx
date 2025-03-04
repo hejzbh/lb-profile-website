@@ -5,7 +5,11 @@ import Title from "@/components/ui/Title";
 import Stats from "@/components/Stats/Stats";
 import { LocaleType } from "@/i18n-config";
 import History from "@/components/AboutUs/History";
-import Text from "@/components/ui/Text";
+import { unstable_cache } from "next/cache";
+import { CACHE_DURATION } from "@/lib/constants";
+import { API } from "@/lib/axios";
+import { AboutText } from "@/types";
+import RichText from "@/components/RichText";
 
 type AboutUsProps = {
   params: Promise<{
@@ -13,13 +17,27 @@ type AboutUsProps = {
   }>;
 };
 
+const getAboutContent = unstable_cache(
+  async (locale: LocaleType) => {
+    const response = await API.get("/about-us" + `?locale=${locale}`);
+
+    return response?.data?.data;
+  },
+  ["global_content"],
+  {
+    revalidate: CACHE_DURATION,
+  }
+);
+
 const AboutUsPage = async ({ params }: AboutUsProps) => {
   const { locale } = await params;
+  const text: AboutText = await getAboutContent(locale);
+
   return (
     <div>
       <BackgroundImage src={img}>
         <Title variant="h1" size="xl" className="!text-white ">
-          ABOUT US
+          {text?.title?.toUpperCase()}
         </Title>
       </BackgroundImage>
       <Stats
@@ -28,25 +46,20 @@ const AboutUsPage = async ({ params }: AboutUsProps) => {
       />
 
       <main className="container my-20">
-        <Text>
-          Wir sind die Fensterspezialisten! Die Welt der Rahmen, Türen,
-          Schiebetüren und Fenster, ist im Wandel. Und zwar täglich. Schließlich
-          bleibt die Technik in unserer Branche nicht stehen und wir bei LB.
-          Profile halten mit diesen Änderungen Schritt.
-        </Text>
-        <Text className="my-5">
-          Mit den neuesten Entwicklungen in unserem Arbeitsbereich Schritt zu
-          halten, ist ein Muss. Und wir arbeiten gerne daran. Das können Sie an
-          unseren Produkten sehen. Das Unternehmen wurde 1960 in Deutschland
-          gegründet und arbeitet heute fleißig: Unser Unternehmen beschäftigt
-          über 130 Mitarbeiter direkt im Werk und produziert mit über 45
-          Vertriebshändlern erfolgreich PVC-Profile für die Herstellung von
-          fertigen PVC-Fenstern. Durch den Aufbau eines großen Händlernetzes
-          sind wir zu einem zuverlässigen Partner geworden, der die Wünsche und
-          Bedürfnisse der Kunden als seine eigenen übernimmt und erfüllt.
-        </Text>
+        <RichText content={text.description_one} />
 
-        <History />
+        <History
+          title={text?.title_two}
+          description={text?.title_two_description}
+          data={Array.from({ length: 4 })?.map((_, idx) => {
+            const number = ["one", "two", "three", "four"];
+
+            return {
+              title: (text as any)[`point_${number[idx]}`] as any,
+              content: (text as any)[`point_${number[idx]}_description`] as any,
+            };
+          })}
+        />
       </main>
     </div>
   );

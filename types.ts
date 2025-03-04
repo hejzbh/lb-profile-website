@@ -22,7 +22,7 @@ export type LocationType = {
   address: string;
   mapHref: string;
   tel: string;
-  fax: string;
+  fax?: string;
   email: string;
 };
 
@@ -42,7 +42,7 @@ export type TeamMemberType = {
 };
 
 export type HomepageText = {
-  id: string;
+  id: number;
   documentId: string;
   hero_title: string;
   hero_button: string;
@@ -67,4 +67,43 @@ export type HomepageText = {
   updatedAt: string;
   publishedAt: string;
   locale: string;
+};
+
+export type AboutText = {
+  id: number;
+  documentId: string;
+  title: string;
+  position_one: string;
+  position_one_description: string;
+  position_two: string;
+  position_two_description: string;
+  position_three: string;
+  position_three_description: string;
+  description_one: any;
+  title_two: string;
+  title_two_description: string;
+  point_one: string;
+  point_one_description: string;
+  point_two: string;
+  point_two_description: string;
+  point_three: string;
+  point_three_description: string;
+  point_four: string;
+  point_four_description: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string;
+};
+
+export type ContactText = {
+  title: string;
+  title_two: string;
+  description: any;
+};
+
+export type CatalogText = {
+  title: string;
+  title_two: string;
+  title_two_description: string;
 };

@@ -9,34 +9,31 @@ type TeamProps = {
 };
 
 const getTeamMembers = (
-  locale: LocaleType,
-  location: TeamProps["location"]
+  locale: LocaleType
+  //location: TeamProps["location"]
 ): TeamMemberType[] => {
-  return {
-    bosnian: [
-      {
-        name: "Mustafa Basic",
-        role: {
-          en: "CEO / General Manager",
-          "bs-BA": "CEO / Generalni direktor",
-          de: "CEO / Geschäftsführer",
-        }[locale],
-        telM: ["+387 61 975 139"],
-        email: "mustafa.basic@lbprofilebh.ba",
-      },
-      {
-        name: "Nermin Milanović",
-        role: {
-          en: "CEO / General Manager",
-          "bs-BA": "CEO / Generalni direktor",
-          de: "CEO / Geschäftsführer",
-        }[locale],
-        telM: ["+387 61 975 139"],
-        email: "mustafa.basic@lbprofilebh.ba",
-      },
-    ] as TeamMemberType[],
-    deutschland: [],
-  }[location];
+  return [
+    {
+      name: "Mustafa Basic",
+      role: {
+        en: "CEO / General Manager",
+        "bs-BA": "CEO / Generalni direktor",
+        de: "CEO / Geschäftsführer",
+      }[locale],
+      telM: ["+387 61 975 139"],
+      email: "mustafa.basic@lbprofilebh.ba",
+    },
+    {
+      name: "Nermin Milanović",
+      role: {
+        en: "CEO / General Manager",
+        "bs-BA": "CEO / Generalni direktor",
+        de: "CEO / Geschäftsführer",
+      }[locale],
+      telM: ["+387 61 975 139"],
+      email: "mustafa.basic@lbprofilebh.ba",
+    },
+  ];
 };
 
 const getContent = (locale: LocaleType, location: TeamProps["location"]) => {
@@ -83,17 +80,15 @@ const getContent = (locale: LocaleType, location: TeamProps["location"]) => {
         },
       },
     }[location][locale],
-    teamMembers: getTeamMembers(locale, location),
+    teamMembers: getTeamMembers(locale),
   };
 };
 
 const Team = ({ className = "", location, locale }: TeamProps) => {
-  getContent(locale, location);
+  const { teamMembers } = getContent(locale, location);
 
   return (
-    <section className={`${className}`}>
-      <div></div>
-    </section>
+    <section className={`${className}`}>{JSON.stringify(teamMembers)}</section>
   );
 };
 
