@@ -41,6 +41,7 @@ export default async function Home({ params }: HomeProps) {
         title={text.produkte_title}
         description={text.produkte_description}
         className="mb-28 lg:mb-36"
+        locale={locale}
       />
       <ShortAboutUs
         title={text.about_title}

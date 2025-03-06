@@ -6,13 +6,13 @@ const nextConfig: NextConfig = {
     after: true,
   },
   images: {
-    domains: ["lbprofile.de", "lbprofile.com"],
+    domains: ["lbprofile.de", "lbprofile.com", "lbprofile.blueduck.at"],
   },
   async rewrites() {
     return [
       {
-        source: "/bs/kontakt",
-        destination: "/bs/contact-us",
+        source: "/bs-BA/kontakt",
+        destination: "/bs-BA/contact-us",
       },
     ];
   },

@@ -2,19 +2,21 @@ import React from "react";
 import CustomBorder from "@/components/ui/CustomBorder";
 import ProfileCard from "./ProfileCard";
 import { ProfileItemType } from "@/types";
-import profileImg from "@/public/images/profile.webp";
+import { LocaleType } from "@/i18n-config";
 
 type ProfilesListProps = {
   className?: string;
+  profileItems: ProfileItemType[];
+  locale: LocaleType;
 };
 
-const profileItems: ProfileItemType[] = [
-  { id: 1, name: "PCD 70 MD", image: profileImg },
-  { id: 2, name: "PCD 82 MD", image: profileImg },
-  { id: 3, name: "PCD 82 XT", image: profileImg },
-];
+const ProfilesList = async ({
+  className = "",
+  profileItems = [],
+  locale,
+}: ProfilesListProps) => {
+  if (!profileItems) return null;
 
-const ProfilesList = ({ className = "" }: ProfilesListProps) => {
   return (
     <div className={`relative min-h-[30em] pt-[170px] ${className}`}>
       <div className="bg-bgColors-primary relative min-h-[30dvh]">
@@ -30,7 +32,7 @@ const ProfilesList = ({ className = "" }: ProfilesListProps) => {
                   : "md:mt-[-140px]"
               }`}
             >
-              <ProfileCard profile={profile} />
+              <ProfileCard locale={locale} profile={profile} />
             </li>
           ))}
         </ul>

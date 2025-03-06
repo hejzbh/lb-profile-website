@@ -1,7 +1,11 @@
 export type ProfileItemType = {
-  id: number | string;
-  name: string;
-  image: any;
+  id: number;
+  title: string;
+  description: any;
+  title_two?: string;
+  description_two: any;
+  slug: string;
+  gallery: { name: string; hash: string; url: string }[];
 };
 
 export type BlogItemType = {

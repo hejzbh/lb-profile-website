@@ -1,8 +1,10 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import darkLogo from "@/public/images/dark-logo.webp";
 import lightLogo from "@/public/images/light-logo.webp";
 import Link from "next/link";
+import { useLocale } from "@/hooks/use-locale";
 
 type LogoProps = {
   className?: string;
@@ -15,8 +17,13 @@ const Logo = ({
   variant = "light",
   imageClassName = "",
 }: LogoProps) => {
+  const { locale } = useLocale();
   return (
-    <Link className={`${className} active:opacity-80`} href={"/"} title="/">
+    <Link
+      className={`${className} active:opacity-80`}
+      href={"/" + locale}
+      title="/"
+    >
       {" "}
       <Image
         src={variant === "light" ? lightLogo : darkLogo}

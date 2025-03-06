@@ -4,7 +4,7 @@ import Link from "next/link";
 import Dropdown from "@/components/ui/Dropdown";
 //import { useLocale } from "@/hooks/use-locale";
 import Text from "@/components/ui/Text";
-import { aboutUsPath, catalogPath } from "@/lib/paths";
+import { aboutUsPath, catalogPath, profilesPath } from "@/lib/paths";
 import { LocaleType } from "@/i18n-config";
 import { useLocale } from "@/hooks/use-locale";
 import { getCatalogItems } from "../Catalog/CatalogList";
@@ -39,7 +39,7 @@ export const getLinks = (locale: LocaleType) => [
   },
   {
     name: texts["pvc_profile"][locale],
-    href: "/",
+    href: profilesPath(locale),
     sublinks: [
       { name: "U izradi...", href: "/" },
       { name: "U izradi...", href: "/" },

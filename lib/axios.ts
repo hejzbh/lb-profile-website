@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const API = axios.create({
-  baseURL: "https://lbprofile.blueduck.at/api",
+  baseURL: process.env.API_URL,
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
