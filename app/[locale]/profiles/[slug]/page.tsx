@@ -4,6 +4,8 @@ import { CACHE_DURATION } from "@/lib/constants";
 import { ProfileItemType } from "@/types";
 import { unstable_cache } from "next/cache";
 import React from "react";
+import Slider from "@/components/ui/Slider";
+import Title from "@/components/ui/Title";
 
 const getProfileDetails = unstable_cache(
   async (locale: LocaleType) => {
@@ -38,7 +40,29 @@ const ProfileDetailsPage = async ({ params }: Props) => {
 
   if (!profileDetails) return null;
 
-  return <div>ProfileDetailsPage</div>;
+  return (
+    <div>
+      <Slider
+        autoplay
+        blackOverlay
+        urls={[
+          "https://lbprofile.com/wp-content/uploads/2022/10/PCD-82XT-SLIDER-image-15376x440-1.jpg",
+          "https://lbprofile.com/wp-content/uploads/2022/10/PCD-82XT-SLIDER-image-15376x440-1.jpg",
+          "https://lbprofile.com/wp-content/uploads/2022/10/PCD-82XT-SLIDER-image-15376x440-1.jpg",
+        ]}
+        className="flex items-center justify-center h-[40dvh] md:h-[50dvh]"
+      >
+        <div
+          style={{ backdropFilter: "blur(10px)" }}
+          className="py-2 px-8 rounded-lg mt-10"
+        >
+          <Title variant="h1" size="xl">
+            {profileDetails?.title}
+          </Title>
+        </div>
+      </Slider>
+    </div>
+  );
 };
 
 export default ProfileDetailsPage;
