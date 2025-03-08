@@ -9,13 +9,13 @@ import Title from "@/components/ui/Title";
 import RichText from "@/components/RichText";
 
 const getProfileDetails = unstable_cache(
-  async (locale: LocaleType) => {
+  async (locale: LocaleType, slug: string) => {
     const details = await API.get(
       "/profiles" + `?locale=${locale}&populate=*`,
       {
         params: {
           filters: {
-            slug: "pcd-82-md",
+            slug,
           },
         },
       }
@@ -32,12 +32,13 @@ const getProfileDetails = unstable_cache(
 type Props = {
   params: Promise<{
     locale: LocaleType;
+    slug: string;
   }>;
 };
 
 const ProfileDetailsPage = async ({ params }: Props) => {
-  const { locale } = await params;
-  const profileDetails: ProfileItemType = await getProfileDetails(locale);
+  const { locale, slug } = await params;
+  const profileDetails: ProfileItemType = await getProfileDetails(locale, slug);
 
   if (!profileDetails) return null;
 
