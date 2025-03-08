@@ -24,7 +24,7 @@ const ContactInfo = ({ className = "", locale }: ContactProps) => {
         <div className="flex flex-col mt-3 space-y-3 text-[#006ab0]">
           <Link
             title="+387 53 991 330"
-            href={"tel:+38753991330"}
+            href={"tel:+0653991330"}
             className="hover:text-textColors-hover transition"
           >
             +387 53 991 330
