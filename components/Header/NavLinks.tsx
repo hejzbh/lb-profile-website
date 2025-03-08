@@ -41,9 +41,9 @@ export const getLinks = (locale: LocaleType) => [
     name: texts["pvc_profile"][locale],
     href: profilesPath(locale),
     sublinks: [
-      { name: "U izradi...", href: "/" },
-      { name: "U izradi...", href: "/" },
-      { name: "U izradi...", href: "/" },
+      { name: "PCD-70-MD", href: profilesPath(locale, "pcd-70-md") },
+      { name: "PCD 82 MD", href: profilesPath(locale, "pcd-82-md") },
+      { name: "PCD 82 XT", href: profilesPath(locale, "pcd-82-xt") },
     ],
   },
   {

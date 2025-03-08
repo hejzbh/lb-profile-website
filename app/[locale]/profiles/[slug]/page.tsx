@@ -6,6 +6,7 @@ import { unstable_cache } from "next/cache";
 import React from "react";
 import Slider from "@/components/ui/Slider";
 import Title from "@/components/ui/Title";
+import RichText from "@/components/RichText";
 
 const getProfileDetails = unstable_cache(
   async (locale: LocaleType) => {
@@ -61,6 +62,24 @@ const ProfileDetailsPage = async ({ params }: Props) => {
           </Title>
         </div>
       </Slider>
+
+      <div className="container mx-auto px-2 py-10">
+        {profileDetails?.description && (
+          <RichText
+            className="mt-10 mb-[3rem]"
+            content={profileDetails?.description}
+          />
+        )}
+        <Title variant="h2" size="lg">
+          {profileDetails?.title_two}
+        </Title>
+        {profileDetails?.description_two && (
+          <RichText
+            className="mt-5"
+            content={profileDetails?.description_two}
+          />
+        )}
+      </div>
     </div>
   );
 };

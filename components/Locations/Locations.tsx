@@ -17,14 +17,6 @@ type LocationsProps = {
 function getLocations(locale: LocaleType): LocationType[] {
   return [
     {
-      name: "L.B Profile GmbH",
-      address: "Magirus-Deutz-Straße 12, 89077 Ulm, Deutschland",
-      tel: "+49 152 08276365",
-      // fax: "+49 (0) 6643 – 703 22",
-      email: "info@lbprofilebh.ba",
-      mapHref: "https://maps.app.goo.gl/4Zm1pnVxo7YpABgx9",
-    },
-    {
       name: {
         de: "Standort Produktion Bosnien und Herzegowina",
         en: "Production location Bosnia and Herzegovina",
@@ -35,6 +27,14 @@ function getLocations(locale: LocaleType): LocationType[] {
       fax: "+387 53 991 330",
       email: "info@lbprofilebh.ba",
       mapHref: "https://maps.app.goo.gl/B4GYxbe51RDZQgVJ9",
+    },
+    {
+      name: "L.B Profile GmbH",
+      address: "Magirus-Deutz-Straße 12, 89077 Ulm, Deutschland",
+      tel: "+49 152 08276365",
+      // fax: "+49 (0) 6643 – 703 22",
+      email: "info@lbprofilebh.ba",
+      mapHref: "https://maps.app.goo.gl/4Zm1pnVxo7YpABgx9",
     },
   ];
 }
