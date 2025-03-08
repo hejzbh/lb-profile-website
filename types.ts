@@ -8,7 +8,7 @@ export type ProfileItemType = {
   gallery: { name: string; hash: string; url: string }[];
 };
 
-export type BlogItemType = {
+export type ServiceItemType = {
   id: number | string;
   name: string;
   thumbnail: any;

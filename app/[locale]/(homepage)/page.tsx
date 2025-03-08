@@ -9,6 +9,7 @@ import { unstable_cache } from "next/cache";
 import { CACHE_DURATION } from "@/lib/constants";
 import { API } from "@/lib/axios";
 import { HomepageText } from "@/types";
+import Services from "@/components/Services";
 
 type HomeProps = {
   params: Promise<{
@@ -48,7 +49,7 @@ export default async function Home({ params }: HomeProps) {
         description={text.about_text}
         className="mb-28 lg:mb-36"
       />
-
+      <Services />
       <Video title={text.video_title} className="mb-28 lg:mb-36" />
       <AboutUs
         title={text.about_us_two}

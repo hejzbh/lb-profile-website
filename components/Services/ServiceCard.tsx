@@ -1,16 +1,16 @@
-import { BlogItemType } from "@/types";
+import { ServiceItemType } from "@/types";
 import React from "react";
 import Image from "next/image";
 import Title from "@/components/ui/Title";
 import Link from "next/link";
 import Text from "@/components/ui/Text";
 
-type BlogCardProps = {
+type ServiceCardProps = {
   className?: string;
-  item: BlogItemType;
+  item: ServiceItemType;
 };
 
-const BlogCard = ({ className = "", item }: BlogCardProps) => {
+const ServiceCard = ({ className = "", item }: ServiceCardProps) => {
   return (
     <Link
       title={item.name}
@@ -47,4 +47,4 @@ const BlogCard = ({ className = "", item }: BlogCardProps) => {
   );
 };
 
-export default BlogCard;
+export default ServiceCard;

@@ -1,6 +1,6 @@
-import { BlogItemType } from "@/types";
+import { ServiceItemType } from "@/types";
 import React from "react";
-import BlogCard from "./BlogCard";
+import BlogCard from "./ServiceCard";
 import {
   Carousel,
   CarouselContent,
@@ -9,16 +9,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/Carousel";
 
-type BlogListProps = {
+type ServicesListProps = {
   className?: string;
-  items: BlogItemType[];
+  services: ServiceItemType[];
 };
 
-const BlogList = ({ className = "", items }: BlogListProps) => {
+const ServicesList = ({ className = "", services }: ServicesListProps) => {
   return (
     <Carousel className={`${className}`}>
       <CarouselContent className="mt-20 mb-10 space-x-10">
-        {items?.map((item) => (
+        {services?.map((item) => (
           <CarouselItem
             key={item.id}
             className="basis-[85%] md:basis-1/2 lg:basis-1/3"
@@ -36,4 +36,4 @@ const BlogList = ({ className = "", items }: BlogListProps) => {
   );
 };
 
-export default BlogList;
+export default ServicesList;

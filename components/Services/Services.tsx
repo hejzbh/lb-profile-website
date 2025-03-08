@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import webImg from "@/public/images/web-1.webp";
+import webImg from "@/public/images/lb-2.webp";
 import Title from "@/components/ui/Title";
 import Button from "@/components/ui/Button";
-import { BlogItemType } from "@/types";
-import BlogList from "./BlogList";
+import { ServiceItemType } from "@/types";
+import ServicesList from "./ServicesList";
 
-type BlogProps = {
+type ServicesProps = {
   className?: string;
 };
 
@@ -15,43 +15,44 @@ async function getBlogItems() {
     return [
       {
         id: 1,
-        name: "Ist es an der Zeit, Ihre TisCHLEREI ZU ERSETZEN?",
+        name: "Service 1",
         thumbnail:
           "https://lbprofile.de/wp-content/uploads/2023/01/home-owners-products-windows-image-new.webp",
         createdAt: "2024-12-12",
       },
       {
         id: 2,
-        name: "Tipps zur Erstellung eines beeindruckenden",
+        name: "Service 2",
         thumbnail:
           "https://lbprofile.de/wp-content/uploads/2023/01/home-owners-products-slidingdoors-image.webp",
         createdAt: "2024-12-10",
       },
       {
         id: 3,
-        name: "Wie Sie Ihren Lebenslauf mit lbprofile",
+        name: "Service 3",
         thumbnail:
           "https://lbprofile.de/wp-content/uploads/2023/01/home-owners-products-entrance-doors-image.webp",
         createdAt: "2024-12-08",
       },
       {
         id: 4,
-        name: "Warum ein professionelles Profilbild",
+        name: "Service 4",
         thumbnail:
           "https://lbprofile.de/wp-content/uploads/2023/01/home-owners-products-slidingdoors-image.webp",
         createdAt: "2024-12-05",
       },
-    ] as BlogItemType[];
+    ] as ServiceItemType[];
   } catch {
     return [];
   }
 }
 
-const Blog = async ({ className = "" }: BlogProps) => {
+const Services = async ({ className = "" }: ServicesProps) => {
   const blogItems = await getBlogItems();
 
   return (
     <section
+      style={{ backdropFilter: "blur(10px)" }}
       className={`py-[70px] relative z-[1] bg-bgColors-secondary ${className}`}
     >
       <Image
@@ -59,6 +60,7 @@ const Blog = async ({ className = "" }: BlogProps) => {
         fill
         className="z-[-2] object-cover"
         alt="Background"
+        style={{ filter: "blur(10px)" }}
         draggable={false}
       />
 
@@ -66,7 +68,7 @@ const Blog = async ({ className = "" }: BlogProps) => {
         {/** Heading */}
         <div className="flex items-center justify-between">
           <Title variant="h2" className="!text-white font-[400]">
-            Aktuelles
+            Services
           </Title>
           <Button
             variant="secondary"
@@ -76,10 +78,10 @@ const Blog = async ({ className = "" }: BlogProps) => {
           </Button>
         </div>
         {/** List */}
-        <BlogList items={blogItems} />
+        <ServicesList services={blogItems} />
       </main>
     </section>
   );
 };
 
-export default Blog;
+export default Services;
