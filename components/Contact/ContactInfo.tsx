@@ -15,7 +15,7 @@ const ContactInfo = ({ className = "", locale }: ContactProps) => {
       {/** Telefon */}
       <div className="bg-white p-5 rounded-xl">
         <div className="flex items-center space-x-3">
-          <PhoneOutgoingIcon size={27} className="text-textColors-active" />
+          <PhoneOutgoingIcon size={25} className="text-textColors-active" />
           <Text size="xl" className="font-semibold">
             {{ en: "Call Us", de: "Ruf uns an", "bs-BA": "Nazovi nas" }[locale]}
           </Text>
@@ -42,7 +42,7 @@ const ContactInfo = ({ className = "", locale }: ContactProps) => {
       {/** E-mail */}
       <div className="bg-white p-5 rounded-xl">
         <div className="flex items-center space-x-3">
-          <MailIcon size={27} className="text-textColors-active" />
+          <MailIcon size={25} className="text-textColors-active" />
           <Text size="xl" className="font-semibold">
             {
               {
@@ -68,7 +68,7 @@ const ContactInfo = ({ className = "", locale }: ContactProps) => {
       {/** Lokacija */}
       <div className="bg-white p-5 rounded-xl">
         <div className="flex items-center space-x-3">
-          <MapPinned size={27} className="text-textColors-active" />
+          <MapPinned size={25} className="text-textColors-active" />
           <Text size="xl" className="font-semibold">
             {
               {
