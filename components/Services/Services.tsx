@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import webImg from "@/public/images/lb-2.webp";
 import Title from "@/components/ui/Title";
-import Button from "@/components/ui/Button";
 import { ServiceItemType } from "@/types";
 import ServicesList from "./ServicesList";
 
@@ -70,12 +69,6 @@ const Services = async ({ className = "" }: ServicesProps) => {
           <Title variant="h2" className="!text-white font-[400]">
             Services
           </Title>
-          <Button
-            variant="secondary"
-            className=" !min-w-0  py-3 px-8 md:py-4 md:px-12"
-          >
-            Mehr
-          </Button>
         </div>
         {/** List */}
         <ServicesList services={blogItems} />

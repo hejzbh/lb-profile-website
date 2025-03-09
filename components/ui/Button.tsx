@@ -11,6 +11,7 @@ type ButtonProps = {
   children: React.ReactNode;
   dataTitle?: string;
   ref?: any; // eslint-disable-line
+  scrollBottom?: boolean;
   onClick?: () => void;
   disabled?: boolean;
   contactBtn?: boolean;
@@ -33,6 +34,7 @@ const Button = ({
   dataTitle = "Click",
   ref,
   contactBtn,
+  scrollBottom,
   href,
 }: ButtonProps) => {
   const { locale } = useLocale();
@@ -43,6 +45,13 @@ const Button = ({
       ref={ref}
       onClick={() => {
         onClick();
+
+        if (scrollBottom) {
+          window.scrollTo({
+            top: 700,
+            behavior: "smooth",
+          });
+        }
 
         if (href) {
           router.push(href);

@@ -25,7 +25,7 @@ const Hero = ({ className = "", title, buttonText }: HeroProps) => {
         <Title size="xl" className="max-w-[730px] mb-4" variant="h1">
           {title?.toUpperCase()}
         </Title>
-        <Button variant="primary" className="font-semibold">
+        <Button scrollBottom variant="primary" className="font-semibold">
           {buttonText}
         </Button>
       </div>

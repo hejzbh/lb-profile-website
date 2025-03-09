@@ -41,7 +41,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string; slug: string };
 }): Promise<Metadata> {
-  const { locale, slug } = params;
+  const { slug } = params;
 
   const ogImage =
     "https://lyctum.com/wp-content/uploads/2018/03/lb-profile.png";
