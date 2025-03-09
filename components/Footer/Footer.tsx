@@ -9,7 +9,7 @@ import SocialMedia from "@/components/Footer/SocialMedia";
 import { useLocale } from "@/hooks/use-locale";
 import { getLinks } from "../Header/NavLinks";
 import Link from "next/link";
-import { catalogPath } from "@/lib/paths";
+import { catalogPath, contactUsPath } from "@/lib/paths";
 
 type FooterProps = {
   className?: string;
@@ -37,12 +37,12 @@ const Footer = ({ className = "" }: FooterProps) => {
           <div className=" max-w-[480px]">
             <Logo imageClassName="min-w-[180px] max-w-[250px] md:min-w-[270px]" />
             <Text className="text-white my-8">{descText[locale]}</Text>
-            <Button href={`/${locale}/about-us`} variant="primary">
+            <Button href={contactUsPath(locale)} variant="primary">
               {
                 {
-                  de: "Mehr über uns",
-                  en: "More about us",
-                  "bs-BA": "Vise o nama",
+                  de: "Kontakt",
+                  en: "Contact Us",
+                  "bs-BA": "Kontakt",
                 }[locale]
               }
             </Button>
