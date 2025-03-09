@@ -7,6 +7,7 @@ import React from "react";
 import Slider from "@/components/ui/Slider";
 import Title from "@/components/ui/Title";
 import RichText from "@/components/RichText";
+import { Metadata } from "next";
 
 const getProfileDetails = unstable_cache(
   async (locale: LocaleType, slug: string) => {
@@ -35,6 +36,31 @@ type Props = {
     slug: string;
   }>;
 };
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string; slug: string };
+}): Promise<Metadata> {
+  const { locale, slug } = params;
+
+  const ogImage =
+    "https://lyctum.com/wp-content/uploads/2018/03/lb-profile.png";
+
+  return {
+    title: `LB Profil - ${slug.toUpperCase().split("-").join(" ")}`,
+
+    openGraph: {
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "LB Profile",
+        },
+      ],
+    },
+  };
+}
 
 const ProfileDetailsPage = async ({ params }: Props) => {
   const { locale, slug } = await params;
