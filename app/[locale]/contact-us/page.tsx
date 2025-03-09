@@ -19,9 +19,9 @@ type ContactProps = {
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: ContactProps["params"];
 }): Promise<Metadata> {
-  const { locale } = params;
+  const { locale } = await params;
 
   const meta = {
     en: {

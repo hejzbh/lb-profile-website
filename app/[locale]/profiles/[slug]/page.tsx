@@ -39,9 +39,9 @@ type Props = {
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string; slug: string };
+  params: Props["params"];
 }): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
 
   const ogImage =
     "https://lyctum.com/wp-content/uploads/2018/03/lb-profile.png";

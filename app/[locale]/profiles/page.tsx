@@ -16,9 +16,9 @@ type ProfilesProps = {
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: ProfilesProps["params"];
 }): Promise<Metadata> {
-  const { locale } = params;
+  const { locale } = await params;
 
   const meta = {
     en: {

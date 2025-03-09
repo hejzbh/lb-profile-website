@@ -20,9 +20,9 @@ type CatalogPageProps = {
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: CatalogPageProps["params"];
 }): Promise<Metadata> {
-  const { locale } = params;
+  const { locale } = await params;
 
   const meta = {
     en: {
